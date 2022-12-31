@@ -70,6 +70,7 @@ zoxide init fish | source
 
 fish_add_path -a $HOME/bin $HOME/.local/bin $HOME/.cargo/bin
 
+function fish_mode_prompt; end
 
 
 
