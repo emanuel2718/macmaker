@@ -46,6 +46,7 @@ brew install markdown
 brew install moreutils
 brew install neofetch
 brew install ninja
+brew install nnn
 brew install node
 brew install nvm
 brew install rectangle
