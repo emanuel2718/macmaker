@@ -25,6 +25,8 @@ keymap('n', '=', '<cmd> resize +1 <cr>') -- resize up
 keymap('n', '-', '<cmd> resize -1 <cr>') -- resize down
 keymap('n', '<leader><leader>', '<cmd> noh <cr>', { silent = true }) -- clear search highlights
 
+keymap('i', '<Tab>', '<C-T>')
+
 
 -- <Space> do nothing on normal mode and visual mode
 keymap({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
