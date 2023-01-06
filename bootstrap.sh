@@ -47,6 +47,9 @@ function install_packages() {
     echo "✔ Installing NVM"
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
     nvm install node
+    # Loads NVM in current shell
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
     nvm install 16.15.0
 }
 
@@ -99,5 +102,3 @@ source bin/osx.sh
 install_packages
 setup_git
 run_dotbot
-
-
