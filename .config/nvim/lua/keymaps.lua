@@ -74,8 +74,8 @@ map('n', '<leader>cr', ':!cargo run<cr>')
 
 map('n', '<leader>ps', ':PackerSync<cr>')
 
+map('n', '<leader>gg', ':LazyGit<cr>')
+
 
 -- TODO: is this still needed?
 -- map('i', '<Tab>', '<C-T>')
-
-
