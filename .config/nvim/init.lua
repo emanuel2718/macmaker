@@ -1,17 +1,26 @@
-local ensure_packer = function()
-  local fn = vim.fn
-  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-  if fn.empty(fn.glob(install_path)) > 0 then
-    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-    vim.cmd [[packadd packer.nvim]]
-    return true
-  end
-  return false
-end
+require('plugins')
+require('colors')
+require('settings')
+require('keymaps')
 
-local packer_bootstrap = ensure_packer()
-
-require('core.keymaps')
-require('core.settings')
-require('core.plugins')
-require('core.color')
+require('core_plugins.autopairs')
+require('core_plugins.bookmark')
+require('core_plugins.comment')
+require('core_plugins.cmp')
+require('core_plugins.copilot')
+require('core_plugins.gitsigns')
+-- require('core_plugins.fidget')
+require('core_plugins.formatter')
+require('core_plugins.hexokinase')
+require('core_plugins.lsp')
+require('core_plugins.lsp-diagnostics')
+require('core_plugins.lspkind')
+require('core_plugins.mason')
+require('core_plugins.mini')
+require('core_plugins.null')
+require('core_plugins.nvim-tree')
+-- require('core_plugins.nnn')
+require('core_plugins.telescope')
+require('core_plugins.template-string')
+require('core_plugins.todo-comments')
+require('core_plugins.treesitter')
