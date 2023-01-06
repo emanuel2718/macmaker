@@ -3,29 +3,13 @@
 
 # Ask for admin password upfront
 sudo -v
+set -e
 
 # Keep session alive
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 SCRIPT=$PWD
 DOTFILES="$HOME/.config"
-
-mkdir $DOTFILES/alacritty
-mkdir $DOTFILES/nvim
-mkdir $DOTFILES/nvim/after
-mkdir $DOTFILES/nvim/after/plugin
-mkdir $DOTFILES/nvim/lua
-mkdir $DOTFILES/nvim/lua/core
-mkdir $DOTFILES/nvim/plugin
-#
-function install_dotfiles() {
-    for f in $(find .config dots -type f -print)
-    do
-        file="${f/dots\/}"
-        ln -sF "${SCRIPT}/${f}" "${HOME}/${file}"
-        echo "✔ Symlinked: ${file}"
-    done
-}
 
 function install_packages() {
     # Install neovim
@@ -94,10 +78,26 @@ function setup_git() {
     git config --global pull.rebase true
 }
 
+function run_dotbot() {
+  CONFIG="install.conf.yaml"
+  DOTBOT_DIR="dotbot"
+
+  DOTBOT_BIN="bin/dotbot"
+  BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+  cd "${BASEDIR}"
+  git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+  git submodule update --init --recursive "${DOTBOT_DIR}"
+
+  "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+}
+
 
 source bin/brew.sh
 source bin/osx.sh
 
-install_dotfiles
 install_packages
 setup_git
+run_dotbot
+
+
