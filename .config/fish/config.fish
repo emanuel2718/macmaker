@@ -4,16 +4,19 @@ end
 
 set -g fish_greeting
 
-set -Ux EDITOR nvim
+set --export EDITOR nvim
 set -Ux VISUAL $EDITOR
 
 set -Ux DOTFILES ~/.config
-set -Ux PROJECTS ~/git
+set -Ux PROJECTS ~/developer
 
 abbr -a yr 'cal -y'
 abbr -a rc 'nvim $DOTFILES/fish/config.fish'
 abbr -a src 'source $DOTFILES/fish/config.fish'
 abbr -a ns 'cp -r $DOTFILES/nvim/ $PROJECTS/personal/dotmaker/.config'
+
+
+abbr -a penv 'python3 -m venv venv/ && source venv/bin/activate.fish'
 
 
 # ----- TMUX -----
@@ -29,8 +32,8 @@ abbr -a cor 'AWS_PROFILE=coqui-one pnpm nx run coqui-one:remove'
 abbr -a cout 'AWS_PROFILE=coqui-one nx run coqui-one:test'
 abbr -a cot 'AWS_PROFILE=coqui-one nx run coqui-one:component-test'
 abbr -a cotw 'AWS_PROFILE=coqui-one nx run coqui-one:component-test --watch'
-abbr -a cet 'AWS_PROFILE=coqui-one nx run coqui-one:e2e'
-abbr -a cetw 'AWS_PROFILE=coqui-one nx run coqui-one:e2e --watch'
+abbr -a cet 'AWS_PROFILE=coqui-one nx run coqui-one-e2e:e2e'
+abbr -a cetw 'AWS_PROFILE=coqui-one nx run coqui-one-e2e:e2e --watch'
 
 abbr -a pns "pnpm nx start"
 abbr -a yns "yarn nx start"
@@ -68,8 +71,15 @@ fzf_configure_bindings --processes=\cp
 zoxide init fish | source
 
 
-fish_add_path -a $HOME/bin $HOME/.local/bin $HOME/.cargo/bin
+# fish_add_path -a $HOME/bin $HOME/.local/bin $HOME/.cargo/bin
+fish_add_path --move $HOME/.local/bin
+fish_add_path $HOME/bin
+fish_add_path $HOME/.cargo/bin/
+fish_add_path $HOME/go/bin
+fish_add_path /opt/homebrew/bin
+fish_add_path /opt/homebrew/sbin
 
+# Disable annoying vi mode indicator
 function fish_mode_prompt; end
 
 export XDG_CONFIG_HOME="$HOME/.config"
