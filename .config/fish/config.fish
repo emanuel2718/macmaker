@@ -8,7 +8,7 @@ set -Ux EDITOR nvim
 set -Ux VISUAL $EDITOR
 
 set -Ux DOTFILES ~/.config
-set -Ux PROJECTS ~/developer
+set -Ux PROJECTS ~/git
 
 abbr -a yr 'cal -y'
 abbr -a rc 'nvim $DOTFILES/fish/config.fish'
@@ -71,6 +71,8 @@ zoxide init fish | source
 fish_add_path -a $HOME/bin $HOME/.local/bin $HOME/.cargo/bin
 
 function fish_mode_prompt; end
+
+export XDG_CONFIG_HOME="$HOME/.config"
 
 
 
