@@ -84,5 +84,6 @@ function fish_mode_prompt; end
 
 export XDG_CONFIG_HOME="$HOME/.config"
 
-
+# Load nvm
+load_nvm > /dev/stderr
 

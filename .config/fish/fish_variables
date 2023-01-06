@@ -6,8 +6,8 @@ SETUVAR --export PROJECTS:/Users/emanuel/developer
 SETUVAR --export VISUAL:nvim
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_cb:cargo\x20build
-SETUVAR _fish_abbr_cet:AWS_PROFILE\x3dcoqui\x2done\x20nx\x20run\x20coqui\x2done\x3ae2e
-SETUVAR _fish_abbr_cetw:AWS_PROFILE\x3dcoqui\x2done\x20nx\x20run\x20coqui\x2done\x3ae2e\x20\x2d\x2dwatch
+SETUVAR _fish_abbr_cet:AWS_PROFILE\x3dcoqui\x2done\x20nx\x20run\x20coqui\x2done\x2de2e\x3ae2e
+SETUVAR _fish_abbr_cetw:AWS_PROFILE\x3dcoqui\x2done\x20nx\x20run\x20coqui\x2done\x2de2e\x3ae2e\x20\x2d\x2dwatch
 SETUVAR _fish_abbr_cex:cargo\x20\x2d\x2dexplain
 SETUVAR _fish_abbr_cor:AWS_PROFILE\x3dcoqui\x2done\x20pnpm\x20nx\x20run\x20coqui\x2done\x3aremove
 SETUVAR _fish_abbr_cos:AWS_PROFILE\x3dcoqui\x2done\x20pnpm\x20nx\x20run\x20coqui\x2done\x3astart
@@ -23,6 +23,7 @@ SETUVAR _fish_abbr_gg:lazygit
 SETUVAR _fish_abbr_gp:git\x20pull\x20\x2d\x2drebase
 SETUVAR _fish_abbr_ncc:nvim\x20\x24HOME/\x2econfig/nvim
 SETUVAR _fish_abbr_ns:cp\x20\x2dr\x20\x24DOTFILES/nvim/\x20\x24PROJECTS/personal/dotmaker/\x2econfig
+SETUVAR _fish_abbr_penv:python3\x20\x2dm\x20venv\x20venv/\x20\x26\x26\x20source\x20venv/bin/activate\x2efish
 SETUVAR _fish_abbr_pip:pip3
 SETUVAR _fish_abbr_pns:pnpm\x20nx\x20start
 SETUVAR _fish_abbr_python:python3
@@ -41,9 +42,10 @@ SETUVAR _fish_abbr_ynsa:REACT_APP_ENABLE_CUSTOM_AUTH\x3dtrue\x20yarn\x20nx\x20ru
 SETUVAR _fish_abbr_yr:cal\x20\x2dy
 SETUVAR _fish_abbr_yt:yarn\x20nx\x20affected\x20\x2d\x2dbase\x3dHEAD\x7e1\x20\x2d\x2dtarget\x3dtest\x20\x2d\x2dparallel\x3d3
 SETUVAR _fish_abbr_yts:yarn\x20nx\x20test\x20schools
+SETUVAR _fisher_edc_2F_bass_files:\x7e/\x2econfig/fish/functions/__bass\x2epy\x1e\x7e/\x2econfig/fish/functions/bass\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:\x7e/\x2econfig/fish/functions/fisher\x2efish\x1e\x7e/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_patrickf1_2F_fzf_2E_fish_files:\x7e/\x2econfig/fish/functions/_fzf_configure_bindings_help\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_extract_var_info\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_changed_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_preview_file\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_diff_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_report_file_type\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_directory\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_log\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_git_status\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_history\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_processes\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_search_variables\x2efish\x1e\x7e/\x2econfig/fish/functions/_fzf_wrapper\x2efish\x1e\x7e/\x2econfig/fish/functions/fzf_configure_bindings\x2efish\x1e\x7e/\x2econfig/fish/conf\x2ed/fzf\x2efish\x1e\x7e/\x2econfig/fish/completions/fzf_configure_bindings\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fisher\x1epatrickf1/fzf\x2efish
+SETUVAR _fisher_plugins:jorgebucaran/fisher\x1epatrickf1/fzf\x2efish\x1eedc/bass
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
@@ -73,4 +75,4 @@ SETUVAR fish_pager_color_description:B3A06D\x1eyellow\x1e\x2di
 SETUVAR fish_pager_color_prefix:cyan\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
-SETUVAR fish_user_paths:/opt/homebrew/bin\x1e/Users/emanuel/\x2elocal/bin\x1e/Users/emanuel/\x2ecargo/bin
+SETUVAR fish_user_paths:/Users/emanuel/\x2elocal/bin\x1e/opt/homebrew/sbin\x1e/Users/emanuel/go/bin\x1e/opt/homebrew/bin\x1e/Users/emanuel/\x2ecargo/bin
