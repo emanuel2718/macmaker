@@ -20,7 +20,6 @@ function install_packages() {
     sudo make install
     cd $SCRIPT
 
-
     # Install Packer
     echo "✔ Installing Packer"
     git clone --depth 1 https://github.com/wbthomason/packer.nvim\
@@ -31,7 +30,7 @@ function install_packages() {
     curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
     source $HOME/.cargo/env
 
-    echo "✔ Installing tooling"
+    echo "✔ Installing Rust tooling"
     rustup update
     rustup toolchain add nightly
     rustup component add rls rust-analysis rust-src
@@ -43,6 +42,7 @@ function install_packages() {
     cd $SCRIPT
 
     # Install Fisher
+    echo "✔ Installing Fisher"
     curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
     fisher install edc/bass
 
