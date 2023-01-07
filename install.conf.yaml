@@ -14,7 +14,7 @@
     # home
     ~/:
       glob: true
-      path: home/*
+      path: dots/*
       prefix: "."
     # nvim
     ~/.config/nvim/init.lua: config/nvim/init.lua
@@ -28,6 +28,9 @@
     ~/.config/lazygit:
       glob: true
       path: config/lazygit/*
+    ~/.config/alacritty:
+      glob: true
+      path: config/alacritty/*
 
 - shell:
     - [
