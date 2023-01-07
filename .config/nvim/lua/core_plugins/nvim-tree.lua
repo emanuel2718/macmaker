@@ -47,7 +47,6 @@ require("nvim-tree").setup({
       }
     }
   }
-
 })
 
 map('n', '<leader>e', ':NvimTreeToggle<cr>')

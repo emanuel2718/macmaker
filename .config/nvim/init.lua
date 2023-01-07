@@ -5,6 +5,7 @@ require('keymaps')
 
 require('core_plugins.autopairs')
 require('core_plugins.bookmark')
+require('core_plugins.blame')
 require('core_plugins.comment')
 require('core_plugins.cmp')
 require('core_plugins.copilot')
