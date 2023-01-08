@@ -18,7 +18,6 @@ brew install awscli
 brew install bottom
 brew install cmake
 brew install curl
-brew install docker
 brew install fantastical
 brew install fd
 brew install findutils
@@ -63,6 +62,7 @@ brew install --cask alacritty
 brew install --cask appcleaner
 brew install --cask brave-browser
 brew install --cask discord
+brew install --cask docker
 brew install --cask flycut
 brew install --cask font-sf-mono-nerd-font
 brew install --cask google-chrome
