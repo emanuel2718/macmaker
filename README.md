@@ -4,7 +4,7 @@ MacMaker
 
 Installation script with extremely subjective sensible defaults for macOS development.
 
-**Warning**: This is intended for personal use only. Use at your own risk.
+**Warning**: This is intended for personal use only. Use at your own risk...
 
 ### Installation
 
@@ -17,4 +17,3 @@ source bootstrap.sh
 ### Preview
 
 ![image](https://user-images.githubusercontent.com/55965894/211152295-fd2f660b-84ae-473f-a4c0-d9d3349602e3.png)
-
