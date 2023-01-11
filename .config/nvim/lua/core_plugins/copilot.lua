@@ -9,4 +9,5 @@ vim.g.copilot_tab_fallback = ""
 vim.g.copilot_node_command = "$HOME/.nvm/versions/node/v16.15.0/bin/node"
 
 -- TODO: add keybind to not show copilot on comments
-vim.api.nvim_set_keymap('i', '<C-p>', 'copilot#Accept()', { expr = true, silent = true})
+vim.api.nvim_set_keymap('i', '<C-p>', 'copilot#Accept()', { expr = true, silent = true })
+

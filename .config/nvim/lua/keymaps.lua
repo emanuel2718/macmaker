@@ -44,8 +44,8 @@ map("n", "<C-u>", "<C-u>zz")
 
 
 -- keep cursor in the middle when searching
-map("n", "n", "nzzzv")
-map("n", "N", "Nzzzv")
+-- map("n", "n", "nzzzv")
+-- map("n", "N", "Nzzzv")
 
 -- respect system clipboard unless told otherwise
 map({ "n", "v" }, "<leader>y", [["+y]])
@@ -74,8 +74,7 @@ map('n', '<leader>cr', ':!cargo run<cr>')
 
 map('n', '<leader>ps', ':PackerSync<cr>')
 
-map('n', '<leader>gg', ':LazyGit<cr>')
-
-
--- TODO: is this still needed?
--- map('i', '<Tab>', '<C-T>')
+map('n', '<leader>gg', ':Neogit<cr>')
+-- map('n', '<leader>gg', ':LazyGit<cr>')
+map('n', '<leader>gl', ':GitBlameToggle<cr>')
+map('n', '<leader>u', ':UndoTreeToggle<cr>')

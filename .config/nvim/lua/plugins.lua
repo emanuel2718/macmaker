@@ -68,11 +68,11 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
-  use 'kdheepak/lazygit.nvim'
+  -- use 'kdheepak/lazygit.nvim'
   use 'f-person/git-blame.nvim'
   use 'tpope/vim-obsession'
   use 'dhruvasagar/vim-prosession'
-  --   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' } -- neogit
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' } -- neogit
 
   -- Copilot
   use('github/copilot.vim')
@@ -105,7 +105,7 @@ return require('packer').startup(function(use)
   -- Misc
   use 'j-hui/fidget.nvim'
   use 'tpope/vim-surround'
-  use 'echasnovski/mini.nvim'
+  -- use 'echasnovski/mini.nvim'
   use 'windwp/nvim-autopairs'
   use 'gcmt/wildfire.vim'
   use 'mg979/vim-visual-multi'

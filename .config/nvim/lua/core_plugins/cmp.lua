@@ -17,14 +17,15 @@ cmp.setup({
     end,
   },
   mapping = cmp.mapping.preset.insert({
-    -- ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item()),
-    -- ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item()),
-    ["<C-j>"] = cmp.mapping(function()
-      cmp.select_next_item()
-    end, { "i", "s" }),
-    ["<C-k>"] = cmp.mapping(function()
-      cmp.select_prev_item()
-    end, { "i", "s" }),
+    ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item()),
+    ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item()),
+    ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item()),
+    ['<C-p>'] = cmp.config.disable,
+    ['<C-y>'] = cmp.config.disable,
+    ['<C-e>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({

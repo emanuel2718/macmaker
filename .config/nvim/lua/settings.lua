@@ -30,12 +30,12 @@ opt.swapfile = false
 opt.tabstop = 2
 opt.termguicolors = true
 opt.textwidth = 79
-opt.timeoutlen = 500
+opt.timeoutlen = 200
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
 opt.undolevels = 1000
 opt.undoreload = 10000
-opt.updatetime = 200
+opt.updatetime = 150
 opt.wildignore = "*.swp, *.bak, *.pyc, *.class"
 
 
@@ -45,15 +45,15 @@ opt.wildignore = "*.swp, *.bak, *.pyc, *.class"
 
 -- NEVER insert comment on newline
 vim.api.nvim_create_autocmd("FileType", {
-    command = "setlocal formatoptions-=cro",
+  command = "setlocal formatoptions-=cro",
 })
 
 -- Highlight on yank
 vim.api.nvim_create_autocmd('TextYankPost', {
-    callback = function()
-      vim.highlight.on_yank({
-        higroup = 'IncSearch',
-        timeout = 300
-      })
-    end
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = 'IncSearch',
+      timeout = 100
+    })
+  end
 })
