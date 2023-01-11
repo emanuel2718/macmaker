@@ -43,7 +43,7 @@ return require('packer').startup(function(use)
   use 'jose-elias-alvarez/typescript.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
   use 'windwp/nvim-ts-autotag'
-  use 'p00f/nvim-ts-rainbow'
+  -- use 'p00f/nvim-ts-rainbow'
 
   -- Treesitter
   use {
