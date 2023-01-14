@@ -17,6 +17,7 @@ map('n', '<leader>wl', '<C-w>l')
 
 map('n', '<leader>wd', ':q<cr>', { silent = true })
 map('n', '<leader>qq', ':qa!<cr>', { silent = true })
+map('n', '<leader>q', ':q!<cr>', { silent = true })
 map('n', '<leader>fs', ':w<cr>')
 map('n', '<leader>`', ':b#<cr>', { silent = true }) -- switch to last buffer
 map('n', '<leader><leader>', ':noh <cr>', { silent = true }) -- clear search highlights
@@ -67,14 +68,21 @@ map("n", "<leader>j", ":lprev<CR>zz")
 -- Search and replace for current word
 map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
+-- Print current directory
+map('n', '<leader>pw', ':!pwd<cr>')
+
+
+
 -- Cargo commands
 map('n', '<leader>cb', ':!cargo build<cr>')
 map('n', '<leader>ct', ':!cargo test<cr>')
 map('n', '<leader>cr', ':!cargo run<cr>')
 
+-- Random Plugins keymaps
 map('n', '<leader>ps', ':PackerSync<cr>')
-
 map('n', '<leader>gg', ':Neogit<cr>')
 -- map('n', '<leader>gg', ':LazyGit<cr>')
 map('n', '<leader>gl', ':GitBlameToggle<cr>')
 map('n', '<leader>u', ':UndoTreeToggle<cr>')
+
+map('n', '<leader>md', ':MarkdownPreviewToggle<cr>')

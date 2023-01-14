@@ -9,6 +9,7 @@ require('telescope').setup {
   },
   defaults = {
     path_display = { 'truncate' },
+    file_ignore_patterns = { 'node_modules', 'package-lock.json', 'yarn.lock' },
     mappings = {
       i = {
         ['<C-x>'] = false,

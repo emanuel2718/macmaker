@@ -39,7 +39,14 @@ require("nvim-tree").setup({
     mappings = {
       custom_only = false,
       list = {
-        { key = '<C-h>', action = 'dir_up' },
+        -- disable c-h
+        { key = "<C-h>", cb = "<Nop>" },
+        { key = "<C-j>", cb = "<Nop>" },
+        { key = "<C-k>", cb = "<Nop>" },
+        { key = "<C-l>", cb = "<Nop>" },
+        { key = "h", cb = "<Nop>" },
+
+        -- { key = '<C-h>', action = 'dir_up' },
         { key = 'l', action = '<CR>' },
         { key = 'h', action = 'close_node' },
         { key = 'H', action = 'toggle_dotfiles' }

@@ -22,6 +22,7 @@ cmp.setup({
     ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item()),
     ['<C-p>'] = cmp.config.disable,
     ['<C-y>'] = cmp.config.disable,
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
     ['<C-e>'] = cmp.mapping({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),

@@ -128,6 +128,19 @@ return require('packer').startup(function(use)
 
   -- Experimental
   use 'axelvc/template-string.nvim'
+  use 'stsewd/gx-extended.vim'
+  use {
+    'hoob3rt/lualine.nvim',
+    requires = {
+      'kyazdani42/nvim-web-devicons',
+      opt = true
+    }
+  }
+
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+
   -- use {
   --   "luukvbaal/nnn.nvim",
   --   config = function() require("nnn").setup() end
