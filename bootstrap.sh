@@ -51,6 +51,10 @@ function install_packages() {
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
     nvm install node
     nvm install 16.15.0
+
+    # Install Alacritty Colorschemes
+    echo "✔ Installing Alacritty colorschemes"
+    git clone https://github.com/eendroroy/alacritty-theme.git ~/.alacritty-colorscheme
 }
 
 function setup_git() {

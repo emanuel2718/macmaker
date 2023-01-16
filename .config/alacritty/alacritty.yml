@@ -34,3 +34,12 @@ key_bindings:
   - { key: Equals,    mods: Alt|Shift,  action: ResetFontSize  }
   - { key: Equals,    mods: Alt,        action: IncreaseFontSize  }
   - { key: Minus,     mods: Alt,        action: DecreaseFontSize  }
+
+import:
+  - ~/.alacritty-colorscheme/themes/tomorrow_night_bright.yaml
+  # - ~/.alacritty-colorscheme/themes/ayu_dark.yaml
+  # - ~/.alacritty-colorscheme/themes/ubuntu.yaml
+  # - ~/.alacritty-colorscheme/themes/remedy_dark.yaml
+  # - ~/.alacritty-colorscheme/themes/pencil_dark.yaml
+
+
