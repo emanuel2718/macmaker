@@ -42,7 +42,7 @@ return require('packer').startup(function(use)
   -- Lsp Helpers
   use 'jose-elias-alvarez/typescript.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'
-  use 'windwp/nvim-ts-autotag'
+  -- use 'windwp/nvim-ts-autotag'
   -- use 'p00f/nvim-ts-rainbow'
 
   -- Treesitter
@@ -156,6 +156,7 @@ return require('packer').startup(function(use)
   use 'tomasiser/vim-code-dark'
   use 'marko-cerovac/material.nvim'
   use 'EdenEast/nightfox.nvim'
+  use 'aktersnurra/no-clown-fiesta.nvim'
 
 
 end)
