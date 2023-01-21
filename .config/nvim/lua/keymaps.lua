@@ -83,6 +83,7 @@ map('n', '<leader>ps', ':PackerSync<cr>')
 map('n', '<leader>gg', ':Neogit<cr>')
 -- map('n', '<leader>gg', ':LazyGit<cr>')
 map('n', '<leader>gl', ':GitBlameToggle<cr>')
-map('n', '<leader>u', ':UndoTreeToggle<cr>')
+map('n', '<leader>u', ':UndotreeToggle<cr>')
+
 
 map('n', '<leader>md', ':MarkdownPreviewToggle<cr>')
