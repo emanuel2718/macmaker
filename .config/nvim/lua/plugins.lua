@@ -9,6 +9,7 @@ return require('packer').startup(function(use)
   }
 
 
+
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim', branch = '0.1.x',
