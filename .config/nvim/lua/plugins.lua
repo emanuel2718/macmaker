@@ -2,13 +2,12 @@ vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+
+  -- Treesitter
   use {
-    'williamboman/mason.nvim',
-    'williamboman/mason-lspconfig.nvim',
-    'neovim/nvim-lspconfig',
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
-
-
 
   -- Telescope
   use {
@@ -20,116 +19,49 @@ return require('packer').startup(function(use)
     run = 'make',
     cond = vim.fn.executable 'make' == 1
   }
-  use 'nvim-telescope/telescope-ui-select.nvim'
 
-  -- Neodev
-  use 'folke/neodev.nvim'
-
-  -- Completions
+  -- LSP, Completion and Snippets
+  use 'neovim/nvim-lspconfig'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/nvim-cmp'
-  use 'onsails/lspkind-nvim'
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'L3MON4D3/LuaSnip'
 
   -- Formatter
   use 'mhartington/formatter.nvim'
+  use "lukas-reineke/lsp-format.nvim"
 
-  -- Snippets
-  use 'L3MON4D3/LuaSnip'
-  use 'saadparwaiz1/cmp_luasnip'
-
-  -- Lsp Helpers
-  use 'jose-elias-alvarez/typescript.nvim'
-  use 'jose-elias-alvarez/null-ls.nvim'
-  -- use 'windwp/nvim-ts-autotag'
-  -- use 'p00f/nvim-ts-rainbow'
-
-  -- Treesitter
+  -- NvimTree
   use {
-    'nvim-treesitter/nvim-treesitter',
-    run = function()
-      pcall(require('nvim-treesitter.install').update { with_sync = true })
-    end,
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
   }
-  use {
-    'nvim-treesitter/nvim-treesitter-textobjects',
-    after = 'nvim-treesitter',
-  }
-  use {
-    'nvim-treesitter/nvim-treesitter-refactor',
-    after = 'nvim-treesitter',
-  }
-  use 'nvim-treesitter/playground'
 
+  -- Prisma support
+  use "pantharshit00/vim-prisma"
+
+  -- Comments
   use 'JoosepAlviste/nvim-ts-context-commentstring'
-
-  -- Git
-  use 'tpope/vim-fugitive'
-  use 'tpope/vim-rhubarb'
-  use 'lewis6991/gitsigns.nvim'
-  -- use 'kdheepak/lazygit.nvim'
-  use 'f-person/git-blame.nvim'
-  use 'tpope/vim-obsession'
-  use 'dhruvasagar/vim-prosession'
-  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' } -- neogit
-
-  -- Copilot
-  use('github/copilot.vim')
-
-  -- UndoTree
-  use {
-    'mbbill/undotree',
-    cmd = 'UndotreeToggle',
-    config = [[vim.g.undotree_SetFocusWhenToggle = 1]],
-  }
-
+  use 'numToStr/Comment.nvim'
 
   -- Diagnostics
   use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 
-  -- Vim Bookmarks
-  use 'MattesGroeger/vim-bookmarks'
-  use 'tom-anders/telescope-vim-bookmarks.nvim'
-
-
-  -- NvimTree
-  use {
-    'nvim-tree/nvim-tree.lua',
-    requires = {
-      'nvim-tree/nvim-web-devicons',
-    },
-    tag = 'nightly'
-  }
-
-  -- Misc
-  use 'j-hui/fidget.nvim'
-  use 'tpope/vim-surround'
-  -- use 'echasnovski/mini.nvim'
+  -- Autopairs
   use 'windwp/nvim-autopairs'
-  use 'gcmt/wildfire.vim'
-  use 'mg979/vim-visual-multi'
-  use 'kyazdani42/nvim-web-devicons'
-  use 'folke/todo-comments.nvim'
-  use 'numToStr/Comment.nvim'
-  use {
-    'akinsho/toggleterm.nvim',
-    tag = '*'
-  }
-  use({
-    'kana/vim-textobj-user',
-    {
-      'kana/vim-textobj-entire',
-      'Julian/vim-textobj-variable-segment',
-    },
-  })
 
-
-
-  -- Experimental
-  use 'axelvc/template-string.nvim'
+  -- GX
   use 'stsewd/gx-extended.vim'
+
+  -- Markdown Preview
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
+  -- Statusline
+  use 'windwp/windline.nvim'
   use {
     'hoob3rt/lualine.nvim',
     requires = {
@@ -138,26 +70,27 @@ return require('packer').startup(function(use)
     }
   }
 
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  -- Copilot
+  use 'github/copilot.vim'
 
+  -- Git
+  use 'lewis6991/gitsigns.nvim'
+  use 'f-person/git-blame.nvim'
+  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
-  -- use {
-  --   "luukvbaal/nnn.nvim",
-  --   config = function() require("nnn").setup() end
-  -- }
+  -- Experimental
+  use 'ggandor/lightspeed.nvim'
+  -- TODO: investigate if this was what was causing the slowness
+  --   use 'jose-elias-alvarez/typescript.nvim'
+  --   use 'jose-elias-alvarez/null-ls.nvim'
 
 
   -- Themes
-  use 'sainnhe/everforest'
-  use 'sainnhe/sonokai'
-  use 'sainnhe/gruvbox-material'
-  use { 'catppuccin/nvim', as = 'catppuccin' }
   use 'folke/tokyonight.nvim'
-  use 'tomasiser/vim-code-dark'
-  use 'marko-cerovac/material.nvim'
-  use 'EdenEast/nightfox.nvim'
+  use 'nyoom-engineering/oxocarbon.nvim'
+  use 'sainnhe/gruvbox-material'
   use 'aktersnurra/no-clown-fiesta.nvim'
-
+  use { 'catppuccin/nvim', as = 'catppuccin' }
+  use 'elvessousa/sobrio'
 
 end)

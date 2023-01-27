@@ -1,47 +1,34 @@
 local opt = vim.opt
 
-opt.autoindent = true
-opt.backup = false
-opt.completeopt = { "menu", "menuone", "noselect" }
-opt.cursorline = true
-opt.encoding = 'utf-8'
-opt.errorbells = false
-opt.expandtab = true
-opt.fileencoding = 'utf-8'
-opt.hlsearch = true
-opt.ignorecase = true
-opt.incsearch = true
-opt.list = true
-opt.mouse = 'a'
 opt.number = true
+opt.numberwidth = 1
 opt.relativenumber = true
-opt.scrolloff = 8
-opt.shell = '/bin/sh'
-opt.shiftwidth = 2
-opt.showcmd = false
-opt.sidescrolloff = 8
-opt.signcolumn = 'yes'
-opt.smartcase = true
-opt.softtabstop = 2
-opt.splitbelow = true
-opt.splitright = true
-opt.statusline = [[%f %y %m %= %p%% %l:%c]]
-opt.swapfile = false
+opt.autoindent = true
 opt.tabstop = 2
+opt.shiftwidth = 2
+opt.expandtab = true
+opt.shiftround = true
+opt.mouse = 'a'
+opt.foldlevel = 99
+opt.foldmethod = 'indent'
+opt.foldenable = true
 opt.termguicolors = true
+opt.signcolumn = 'yes'
+-- opt.statusline = [[%f %y %m %= %p%% %l:%c]]
+opt.backup = false
+opt.swapfile = false
 opt.textwidth = 79
-opt.timeoutlen = 200
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
-opt.undolevels = 1000
+opt.undolevels = 10000
 opt.undoreload = 10000
-opt.updatetime = 150
+opt.updatetime = 300
 opt.wildignore = "*.swp, *.bak, *.pyc, *.class"
-
-
--- vim.cmd('autocmd BufWinEnter * :set formatoptions-=c formatoptions-=r formatoptions-=o')
--- vim.cmd('command CDD cd %:p:h')
--- vim.cmd('autocmd BufWinEnter * setlocal modifiable')
+opt.splitbelow = true
+opt.splitright = true
+opt.showcmd = false
+opt.encoding = 'utf-8'
+opt.errorbells = false
 
 -- NEVER insert comment on newline
 vim.api.nvim_create_autocmd("FileType", {

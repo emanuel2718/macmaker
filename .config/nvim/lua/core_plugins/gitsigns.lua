@@ -8,8 +8,8 @@ config.setup {
     topdelete    = { hl = 'GitSignsDelete', text = ' ▎', numhl = 'GitSignsDeleteNr', linehl = 'GitSignsDeleteLn' },
     changedelete = { hl = 'GitSignsChange', text = ' ▎', numhl = 'GitSignsChangeNr', linehl = 'GitSignsChangeLn' },
   },
-  current_line_blame = true,
-  current_line_blame_opts = {
-    delay = 1000,
-  }
+  -- current_line_blame = true,
+  -- current_line_blame_opts = {
+  --   delay = 1000,
+  -- }
 }

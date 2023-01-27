@@ -47,7 +47,7 @@ require('telescope').setup {
     },
   },
 }
-require("telescope").load_extension("ui-select")
+-- require("telescope").load_extension("ui-select")
 
 map('n', '<leader>.', builtin.find_files)
 map('n', '<leader>pf', builtin.git_files)
@@ -66,3 +66,4 @@ map('n', '<leader>/', function()
 end)
 
 pcall(require('telescope').load_extension, 'fzf')
+

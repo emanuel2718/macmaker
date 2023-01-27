@@ -1,14 +1,11 @@
-local cmp = require 'cmp'
-local cmp_select = { behavior = cmp.SelectBehavior.Select }
-local luasnip = require('luasnip')
-local lspkind = require 'lspkind'
+local cmp = require("cmp")
+
 
 local signs = { error = "E", warn = "W", hint = "H", info = "I" }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
-
 
 cmp.setup({
   snippet = {
@@ -29,57 +26,10 @@ cmp.setup({
     }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lsp',
-      entry_filter = function(entry)
-        return require('cmp.types').lsp.CompletionItemKind[entry:get_kind()] ~= 'Text'
-      end
-    },
-    { name = 'luasnip' },
-  }, {
-    { name = 'buffer' },
-  }),
-  formatting = {
-    format = lspkind.cmp_format({
-      with_text = true,
-      maxwidth = 50,
-      before = function(entry, vim_item)
-        return vim_item
-      end,
-    }),
-
-  }
-})
-
-cmp.setup.filetype('gitcommit', {
-  sources = cmp.config.sources({
-    { name = 'cmp_git' },
-  }, {
-    { name = 'buffer' },
-  })
-})
-
-cmp.setup.cmdline({ '/', '?' }, {
-  mapping = cmp.mapping.preset.cmdline(),
   sources = {
-    { name = 'buffer' }
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' },
   }
 })
 
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline({
-    ['<C-j>'] = cmp.mapping(cmp.mapping.select_next_item()),
-    ['<C-k>'] = cmp.mapping(cmp.mapping.select_prev_item()),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  }),
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-    { name = 'cmdline' }
-  })
-})
-
-vim.cmd([[
-set completeopt=menuone,noinsert,noselect
-highlight! default link CmpItemKind CmpItemMenuDefault
-]])
