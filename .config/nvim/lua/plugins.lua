@@ -86,6 +86,7 @@ return require('packer').startup(function(use)
 
 
   -- Themes
+  use "Alexis12119/nightly.nvim"
   use 'folke/tokyonight.nvim'
   use 'nyoom-engineering/oxocarbon.nvim'
   use 'sainnhe/gruvbox-material'

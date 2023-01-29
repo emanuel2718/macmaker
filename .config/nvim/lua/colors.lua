@@ -1,4 +1,5 @@
-vim.cmd [[colorscheme tokyonight-night]]
+-- vim.cmd [[colorscheme tokyonight-night]]
+vim.cmd [[colorscheme nightly]]
 
 -- vim.cmd [[colorscheme no-clown-fiesta]]
 --
