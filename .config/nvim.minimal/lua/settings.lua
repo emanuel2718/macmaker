@@ -20,7 +20,6 @@ opt.swapfile = false
 opt.textwidth = 79
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
-opt.timeoutlen = 500
 opt.undolevels = 10000
 opt.undoreload = 10000
 opt.updatetime = 300
@@ -28,18 +27,8 @@ opt.wildignore = "*.swp, *.bak, *.pyc, *.class"
 opt.splitbelow = true
 opt.splitright = true
 opt.showcmd = false
-opt.showmode = false
 opt.encoding = 'utf-8'
 opt.errorbells = false
-opt.wrap = false
-opt.scrolloff = 8
-opt.sidescrolloff = 8
-opt.signcolumn = 'yes'
-opt.cursorline = true
-opt.hidden = true
-opt.pumheight = 8
-opt.pumblend = 10
-opt.timeoutlen = 500
 
 -- NEVER insert comment on newline
 vim.api.nvim_create_autocmd("FileType", {

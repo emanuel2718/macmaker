@@ -16,13 +16,6 @@ map('n', '<leader>wk', '<C-w>k')
 map('n', '<leader>wl', '<C-w>l')
 
 
--- Window resizing
-map('n', '<C-Up>', ':resize +2<cr>')
-map('n', '<C-Down>', ':resize -2<cr>')
-map('n', '<C-Left>', ':vertical resize +2<cr>')
-map('n', '<C-Right>', ':vertical resize -2<cr>')
-
-
 map('n', '<leader>wd', ':q<cr>', { silent = true })
 map('n', '<leader>qq', ':qa!<cr>', { silent = true })
 map('n', '<leader>q', ':q!<cr>', { silent = true })
@@ -75,36 +68,9 @@ map('n', '<leader>cb', ':!cargo build<cr>')
 map('n', '<leader>ct', ':!cargo test<cr>')
 map('n', '<leader>cr', ':!cargo run<cr>')
 
--- NvimTree
-map('n', '<leader>e', ':NvimTreeToggle<cr>')
-
--- Telescope
-map('n', '<leader>.', ':Telescope find_files<cr>')
-map('n', '<leader>pf', ':Telescope git_files<cr>')
-map('n', '<leader>fr', ':Telescope oldfiles<cr>')
-map('n', '<leader>s.', ':Telescope grep_string<cr>')
-map('n', '<leader>sp', ':Telescope live_grep<cr>')
-map('n', '<leader>ss', ':Telescope current_buffer_fuzzy_find<cr>')
-map('n', '<leader>sd', ':Telescope diagnostics<cr>')
-map('n', '<leader>ht', ':Telescope colorscheme<cr>')
-
-
--- Toggle Diagnostics
--- map('n', '<leader>dd', ':ToggleDiag<cr>')
-
-
 -- Random Plugins keymaps
--- map('n', '<leader>ps', ':PackerSync<cr>')
-map('n', '<leader>ps', ':Lazy<cr>')
+map('n', '<leader>ps', ':PackerSync<cr>')
 map('n', '<leader>u', ':UndotreeToggle<cr>')
 map('n', '<leader>md', ':MarkdownPreviewToggle<cr>')
 map('n', '<leader>gg', ':Neogit<cr>')
 -- map('n', '<leader>gg', ':LazyGit<cr>')
-
-
--- Avoid moving lines by mistake
-map('n', '<S-j>', '<Nop>')
-map('n', '<S-k>', '<Nop>')
-
-
-

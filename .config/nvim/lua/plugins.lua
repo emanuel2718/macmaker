@@ -1,97 +1,116 @@
-vim.cmd [[packadd packer.nvim]]
-
-return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-
-  -- Treesitter
-  use {
-    'nvim-treesitter/nvim-treesitter',
-    run = ':TSUpdate'
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
+if vim.fn.isdirectory(lazypath) == 0 then
+  vim.notify("Installing lazy...", vim.log.levels.INFO)
+  vim.fn.system {
+    "git",
+    "clone",
+    "https://github.com/folke/lazy.nvim.git",
+    lazypath,
   }
+end
 
-  -- Telescope
-  use {
-    'nvim-telescope/telescope.nvim', branch = '0.1.x',
-    requires = { { 'nvim-lua/plenary.nvim' } }
-  }
-  use {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make',
-    cond = vim.fn.executable 'make' == 1
-  }
+vim.opt.runtimepath:prepend(lazypath)
 
-  -- LSP, Completion and Snippets
-  use 'neovim/nvim-lspconfig'
-  use 'hrsh7th/cmp-nvim-lsp'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'saadparwaiz1/cmp_luasnip'
-  use 'L3MON4D3/LuaSnip'
+local opts = {
+  git = {
+    -- defaults for the `Lazy log` command
+    -- log = { "-10" }, -- show the last 10 commits
+    log = { "--since=3 days ago" }, -- show commits from the last 3 days
+    timeout = 300, -- kill processes that take more than 2 minutes
+    url_format = "https://github.com/%s.git",
+  },
+  lockfile = vim.fn.stdpath "data" .. "/lazy-lock.json", -- lockfile generated after running update.
+  concurrency = nil, ---@type number limit the maximum amount of concurrent tasks
+  dev = {
+    -- directory where you store your local plugin projects
+    path = "~/projects",
+    ---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
+    patterns = {}, -- For example {"folke"}
+  },
+  install = {
+    -- install missing plugins on startup. This doesn't increase startup time.
+    missing = true,
+    -- try to load one of these colorschemes when starting an installation during startup
+    colorscheme = { "nightly", "habamax" },
+  },
+  ui = {
+    -- a number <1 is a percentage., >1 is a fixed size
+    size = { width = 0.8, height = 0.8 },
+    -- The border to use for the UI window. Accepts same border values as |nvim_open_win()|.
+    border = "rounded",
+    icons = {
+      cmd = " ",
+      config = "",
+      event = "",
+      ft = " ",
+      init = " ",
+      keys = " ",
+      plugin = " ",
+      runtime = " ",
+      source = " ",
+      start = "",
+      task = "✔ ",
+    },
+    throttle = 20, -- how frequently should the ui process render events
+    custom_keys = {},
+    diff = {
+      -- diff command <d> can be one of:
+      -- * browser: opens the github compare view. Note that this is always mapped to <K> as well,
+      --   so you can have a different command for diff <d>
+      -- * git: will run git diff and open a buffer with filetype git
+      -- * terminal_git: will open a pseudo terminal with git diff
+      -- * diffview.nvim: will open Diffview to show the diff
+      cmd = "git",
+    },
+  },
 
-  -- Formatter
-  use 'mhartington/formatter.nvim'
-  use "lukas-reineke/lsp-format.nvim"
+  checker = {
+    -- automatically check for plugin updates
+    enabled = false,
+    concurrency = nil, ---@type number? set to 1 to check for updates very slowly
+    notify = true, -- get a notification when new updates are found
+    frequency = 3600, -- check for updates every hour
+  },
+  change_detection = {
+    -- automatically check for config file changes and reload the ui
+    enabled = true,
+    notify = false, -- get a notification when changes are found
+  },
+  -- lazy can generate helptags from the headings in markdown readme files,
+  -- so :help works even for plugins that don't have vim docs.
+  -- when the readme opens with :help it will be correctly displayed as markdown
+  performance = {
+    cache = {
+      enabled = true,
+      path = vim.fn.stdpath "state" .. "/lazy/cache",
+      -- Once one of the following events triggers, caching will be disabled.
+      -- To cache all modules, set this to `{}`, but that is not recommended.
+      -- The default is to disable on:
+      --  * VimEnter: not useful to cache anything else beyond startup
+      --  * BufReadPre: this will be triggered early when opening a file from the command line directly
+      disable_events = { "UIEnter", "VimEnter", "BufReadPre" },
+    },
+    reset_packpath = true, -- reset the package path to improve startup time
+    rtp = {
+      reset = false, -- reset the runtime path to $VIMRUNTIME and your config directory
+      ---@type string[] list any plugins you want to disable here
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+      },
+    },
+  },
+}
 
-  -- NvimTree
-  use {
-    'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
-  }
+local status_ok, lazy = pcall(require, "lazy")
+if not status_ok then
+  return
+end
 
-  -- Prisma support
-  use "pantharshit00/vim-prisma"
-
-  -- Comments
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
-  use 'numToStr/Comment.nvim'
-
-  -- Diagnostics
-  use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
-
-  -- Autopairs
-  use 'windwp/nvim-autopairs'
-
-  -- GX
-  use 'stsewd/gx-extended.vim'
-
-  -- Markdown Preview
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install",
-    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
-
-  -- Statusline
-  use 'windwp/windline.nvim'
-  use {
-    'hoob3rt/lualine.nvim',
-    requires = {
-      'kyazdani42/nvim-web-devicons',
-      opt = true
-    }
-  }
-
-  -- Copilot
-  use 'github/copilot.vim'
-
-  -- Git
-  use 'lewis6991/gitsigns.nvim'
-  use 'f-person/git-blame.nvim'
-  use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
-
-  -- Experimental
-  use 'ggandor/lightspeed.nvim'
-  -- TODO: investigate if this was what was causing the slowness
-  --   use 'jose-elias-alvarez/typescript.nvim'
-  --   use 'jose-elias-alvarez/null-ls.nvim'
-
-
-  -- Themes
-  use "Alexis12119/nightly.nvim"
-  use 'folke/tokyonight.nvim'
-  use 'nyoom-engineering/oxocarbon.nvim'
-  use 'sainnhe/gruvbox-material'
-  use 'aktersnurra/no-clown-fiesta.nvim'
-  use { 'catppuccin/nvim', as = 'catppuccin' }
-  use 'elvessousa/sobrio'
-
-end)
+lazy.setup("core-plugins", opts)
