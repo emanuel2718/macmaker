@@ -14,7 +14,7 @@ return {
       sources = {
         formatting.prettier.with({
           extra_filetypes = { 'toml', 'solidity' },
-          extra_args = { '--no-semi', '--single-quote', '--jsx-single-quote' },
+          -- extra_args = { '--single-quote', '--jsx-single-quote' },
         }),
         formatting.gofumpt,
         formatting.autopep8,
