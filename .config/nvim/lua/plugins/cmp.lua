@@ -23,7 +23,7 @@ function M.config()
       -- keyword_length = 1,
     },
     mapping = cmp.mapping.preset.insert({
-      -- ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item()),
+      ["<Tab>"] = cmp.mapping(cmp.mapping.select_next_item()),
       ["<C-j>"] = cmp.mapping(cmp.mapping.select_next_item()),
       ["<C-k>"] = cmp.mapping(cmp.mapping.select_prev_item()),
       ["<C-p>"] = cmp.config.disable,

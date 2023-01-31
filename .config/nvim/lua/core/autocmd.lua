@@ -13,23 +13,32 @@ vim.api.nvim_create_autocmd("FileType", {
     "checkhealth",
   },
   callback = function()
-    vim.keymap.set({ "n" }, "<ESC>", "<cmd>close<CR>", { silent = true, buffer = true })
+    vim.keymap.set(
+      { "n" },
+      "<ESC>",
+      "<cmd>close<CR>",
+      { silent = true, buffer = true }
+    )
   end,
 })
 
 -- Remove whitespace on save
-local TrimWhiteSpaceGrp = vim.api.nvim_create_augroup("TrimWhiteSpaceGrp", { clear = true })
+local TrimWhiteSpaceGrp =
+  vim.api.nvim_create_augroup("TrimWhiteSpaceGrp", { clear = true })
 vim.api.nvim_create_autocmd("BufWritePre", {
   command = [[:%s/\s\+$//e]],
   group = TrimWhiteSpaceGrp,
 })
 
-
 -- Don't auto comment new line
-vim.api.nvim_create_autocmd("BufEnter", { command = [[set formatoptions-=cro]] })
+vim.api.nvim_create_autocmd(
+  "BufEnter",
+  { command = [[set formatoptions-=cro]] }
+)
 
 -- Highlight on yank
-local highlight_group = vim.api.nvim_create_augroup("YankHighlight", { clear = true })
+local highlight_group =
+  vim.api.nvim_create_augroup("YankHighlight", { clear = true })
 vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({ higroup = "Constant", timeout = 400 })
@@ -37,7 +46,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = highlight_group,
   pattern = "*",
 })
-
 
 -- [[ Alpha opens when last buffer closes ]]
 --vim.api.nvim_create_augroup("alpha_on_empty", { clear = true })

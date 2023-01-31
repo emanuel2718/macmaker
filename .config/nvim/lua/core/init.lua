@@ -11,8 +11,10 @@ M.lualine_theme = "auto"
 
 -- M.colorscheme = "habamax"
 -- M.colorscheme = "tokyonight-night"
--- M.colorscheme = "nightly"
-M.colorscheme = "no-clown-fiesta"
+M.colorscheme = "nightly"
+-- M.colorscheme = "no-clown-fiesta"
+-- M.colorscheme = "carbonfox"
+-- M.colorscheme = "default"
 
 M.treesitter_langs = {
   "bash",
