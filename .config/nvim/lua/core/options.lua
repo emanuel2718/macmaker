@@ -4,9 +4,9 @@ local wo = vim.wo
 
 opt.backup = false
 opt.cmdheight = 1
-opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
+-- opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
 opt.cursorline = true
-opt.lazyredraw = true
+-- opt.lazyredraw = true
 opt.mouse = "a"
 opt.number = true
 opt.relativenumber = true
@@ -26,7 +26,6 @@ opt.swapfile = false
 opt.textwidth = 79
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true
-opt.timeoutlen = 500
 opt.undolevels = 10000
 opt.undoreload = 10000
 opt.updatetime = 300
@@ -38,7 +37,6 @@ opt.errorbells = false
 opt.wrap = false
 opt.pumheight = 8
 opt.pumblend = 10
-opt.timeoutlen = 500
 
 -- Set copilots options here. TODO: move this
 vim.g.copilot_no_tab_map = true
