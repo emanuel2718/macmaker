@@ -53,6 +53,7 @@ map({ "n", "v" }, "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
 
 -- Q, please don't do random shit
+map("n", "q", "<nop>")
 map("n", "Q", "<nop>")
 
 -- Search and replace for current word
@@ -62,6 +63,14 @@ map("n", "<leader>r", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 map("n", "<leader>pw", ":!pwd<cr>")
 
 map("n", "<C-\\>", ":ToggleTerm<cr>")
+
+map("n", "<leader>gd", ":DiffviewOpen<cr>")
+map("n", "<leader>gf", ":DiffviewFileHistory<cr>")
+map("n", "<leader>gg", ":Git<cr>")
+map("n", "<leader>g.", ":Git add .<cr>")
+map("n", "<C-c><C-c>", ":Git commit<cr>")
+map("n", "<leader>gp", ":Git pull --rebase<cr>")
+map("n", "<C-p><C-p>", ":Git push<cr>")
 
 -- Cargo commands
 -- map('n', '<leader>cb', ':!cargo build<cr>')
