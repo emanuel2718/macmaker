@@ -1,0 +1,6 @@
+require("lazy-loader")
+require("core.options")
+require("core.keymaps")
+require("lazy").setup("plugins", require("core").lazy_opts)
+require("core.autocmd")
+require("core.utils")

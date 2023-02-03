@@ -61,7 +61,7 @@ M.mason_formatters = {
   "black",
   "clang-format",
   -- "fourmolu",
-  "prettierd",
+  "prettier",
   "rustfmt",
   "shfmt",
   "stylua",
