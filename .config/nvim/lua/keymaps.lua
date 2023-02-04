@@ -70,3 +70,5 @@ map('n', '<leader>ps', ':PackerSync<cr>')
 -- Plugins maps
 map('n', '<C-\\>', ':ToggleTerm<cr>')
 map('n', '<leader>md', ':MarkdownPreviewToggle<cr>')
+
+map('n', '<leader>bd', ':BufDel<cr>')

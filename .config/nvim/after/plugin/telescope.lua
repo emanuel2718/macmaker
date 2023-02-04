@@ -60,6 +60,7 @@ map('n', '<leader>sp', builtin.live_grep)
 map('n', '<leader>ss', builtin.current_buffer_fuzzy_find)
 map('n', '<leader>sd', builtin.diagnostics)
 map('n', '<leader>ht', builtin.colorscheme)
+map('n', '<leader>bb', ':Telescope buffers<CR>')
 map('n', '<leader>/', function()
   -- You can pass additional configuration to telescope to change theme, layout, etc.
   require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
