@@ -17,9 +17,18 @@
 
 require('nvim-tundra').setup({
   dim_inactive_windows = {
-    enabled = false,
+    enabled = true,
     color = nil,
   },
+  overwrite = {
+    colors = {
+      gray = {
+        _900 = '#000000',
+        _950 = '#000000',
+        _1000 = '#000000'
+      }
+    }
+  }
 })
 vim.cmd [[colorscheme tundra]]
 

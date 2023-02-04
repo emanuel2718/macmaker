@@ -38,14 +38,15 @@ lsp.on_attach(function(client, buffr)
   local opts = { buffer = buffr, remap = false }
   map("n", "gd", function() vim.lsp.buf.definition() end, opts)
   map("n", "gr", function() vim.lsp.buf.references() end, opts)
+  map('n', '<leader>lf', function() vim.lsp.buf.format() end, opts)
   map("n", "K", function() vim.lsp.buf.hover() end, opts)
-  map("n", "<leader>si", function() vim.lsp.buf.workspace_symbol() end, opts)
   map("n", "<leader>i", function() vim.diagnostic.open_float() end, opts)
   map("n", "[d", function() vim.diagnostic.goto_next() end, opts)
   map("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
   map("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
   map("n", "<leader>nn", function() vim.lsp.buf.rename() end, opts)
   map("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
+  map("n", "<leader>lc", ':LspRestart<cr>')
 
 end)
 

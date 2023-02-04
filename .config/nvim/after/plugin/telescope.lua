@@ -10,12 +10,17 @@ require('telescope').setup {
   defaults = {
     path_display = { 'truncate' },
     file_ignore_patterns = { 'node_modules', 'package-lock.json', 'yarn.lock' },
+    initial_mode = 'insert',
     mappings = {
       i = {
         ['<C-x>'] = false,
         ["<C-k>"] = actions.move_selection_previous,
         ["<C-j>"] = actions.move_selection_next,
         ["<esc>"] = actions.close
+      },
+      n = {
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-j>"] = actions.move_selection_next,
       }
     }
   },
@@ -55,6 +60,8 @@ require('telescope').setup {
 map('n', '<leader>.', builtin.find_files)
 map('n', '<leader>pf', builtin.git_files)
 map('n', '<leader>fr', builtin.oldfiles)
+map('n', '<leader>sr', builtin.lsp_references)
+map('n', '<leader>si', builtin.lsp_document_symbols)
 map('n', '<leader>s.', builtin.grep_string)
 map('n', '<leader>sp', builtin.live_grep)
 map('n', '<leader>ss', builtin.current_buffer_fuzzy_find)
