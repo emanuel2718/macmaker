@@ -79,7 +79,7 @@ require('neo-tree').setup({
       ['<Tab>'] = 'toggle_node',
       ['h'] = 'close_node',
       ["<2-LeftMouse>"] = "open",
-      ["<cr>"] = "open",
+      ["<cr>"] = "open_with_window_picker",
       ["<esc>"] = "revert_preview",
       ["P"] = { "toggle_preview", config = { use_float = true } },
       ["l"] = "toggle_node",
