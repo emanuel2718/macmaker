@@ -51,7 +51,8 @@ map("v", "<", "<gv", opts)
 map("v", ">", ">gv", opts)
 
 -- respect system clipboard unless told otherwise
-map({ "n", "v" }, "<leader>y", [["+y]])
+map("n", "<leader>y", [["+y]])
+map("v", "<leader>y", [["+y]])
 map("n", "<leader>Y", [["+Y]])
 
 -- Q, please don't do random shit
