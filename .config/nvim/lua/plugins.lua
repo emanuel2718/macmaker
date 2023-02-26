@@ -175,4 +175,8 @@ return require('packer').startup(function(use)
     "mcchrish/zenbones.nvim",
     requires = "rktjmp/lush.nvim"
   }
+  use({
+    'ramojus/mellifluous.nvim',
+    requires = { 'rktjmp/lush.nvim' },
+  })
 end)

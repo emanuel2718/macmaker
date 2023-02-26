@@ -15,21 +15,27 @@
 --
 -- vim.cmd [[colorscheme everforest]]
 
-require('nvim-tundra').setup({
-  dim_inactive_windows = {
-    enabled = true,
-    color = nil,
-  },
-  overwrite = {
-    colors = {
-      gray = {
-        _900 = '#000000',
-        _950 = '#000000',
-        _1000 = '#000000'
-      }
-    }
-  }
-})
-vim.cmd [[colorscheme tundra]]
+-- require('nvim-tundra').setup({
+--   dim_inactive_windows = {
+--     enabled = true,
+--     color = nil,
+--   },
+--   overwrite = {
+--     colors = {
+--       gray = {
+--         _900 = '#000000',
+--         _950 = '#000000',
+--         _1000 = '#000000'
+--       }
+--     }
+--   }
+-- })
+-- vim.cmd [[colorscheme tundra]]
+
+vim.cmd [[colorscheme vscode]]
+
+
+-- require 'mellifluous'.setup({}) -- optional, see configuration section.
+-- vim.cmd [[colorscheme mellifluous]]
 
 -- vim.cmd [[colorscheme poimandres]]
