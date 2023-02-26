@@ -6,7 +6,7 @@ lsp.preset("recommended")
 lsp.ensure_installed({
   'tsserver',
   -- 'eslint',
-  'sumneko_lua',
+  -- 'sumneko_lua',
   'rust_analyzer'
 })
 
@@ -31,7 +31,13 @@ lsp.set_preferences({
 })
 
 lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
+  mapping = cmp_mappings,
+  sources = {
+    { name = 'path' },
+    { name = 'nvim_lsp', keyword_length = 1 },
+    { name = 'buffer',   keyword_length = 1 },
+    { name = 'luasnip',  keyword_length = 1 },
+  }
 })
 
 lsp.on_attach(function(client, buffr)
@@ -47,7 +53,6 @@ lsp.on_attach(function(client, buffr)
   map("n", "<leader>nn", function() vim.lsp.buf.rename() end, opts)
   map("i", "<C-k>", function() vim.lsp.buf.signature_help() end, opts)
   map("n", "<leader>lc", ':LspRestart<cr>')
-
 end)
 
 lsp.setup()
