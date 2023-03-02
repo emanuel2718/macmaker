@@ -31,8 +31,10 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
-    { name = "nvim_lsp" },
-    { name = "buffer" },
+    { name = "nvim_lsp" }, -- TODO: add more sources but differentiate them better?
+    { name = 'nvim_lsp_document_symbol' },
+    { name = 'path' }
+    -- { name = "buffer" },
   }),
   formatting = {
     format = function(entry, vim_item)
