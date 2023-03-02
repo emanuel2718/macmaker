@@ -32,7 +32,8 @@
 -- })
 -- vim.cmd [[colorscheme tundra]]
 
-vim.cmd [[colorscheme vscode]]
+-- vim.cmd [[colorscheme vscode]]
+vim.cmd [[colorscheme github_dark]]
 
 
 -- require 'mellifluous'.setup({}) -- optional, see configuration section.

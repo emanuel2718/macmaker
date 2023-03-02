@@ -179,4 +179,5 @@ return require('packer').startup(function(use)
     'ramojus/mellifluous.nvim',
     requires = { 'rktjmp/lush.nvim' },
   })
+  use({ 'projekt0n/github-nvim-theme', tag = 'v0.0.7' })
 end)
