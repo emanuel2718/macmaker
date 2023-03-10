@@ -71,6 +71,7 @@ brew install --cask iterm2
 brew install --cask karabiner-elements
 brew install --cask obsidian
 brew install --cask postman
+brew install --cask raycast
 brew install --cask via
 brew install --cask visual-studio-code
 
