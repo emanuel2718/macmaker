@@ -1,0 +1,152 @@
+{
+  // UI Settings
+  "breadcrumbs.enabled": false,
+  "editor.fontSize": 14,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
+  "editor.renderControlCharacters": true,
+  "editor.renderLineHighlight": "line",
+  "editor.renderWhitespace": "trailing",
+  "editor.scrollbar.horizontal": "hidden",
+  "editor.scrollbar.horizontalScrollbarSize": 2,
+  "editor.scrollbar.vertical": "hidden",
+  "editor.scrollbar.verticalScrollbarSize": 2,
+  "editor.tabSize": 2,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-_",
+  // "explorer.openEditors.visible": 0,
+  // "files.autoSave": "onWindowChange",
+  "files.exclude": {
+    "**/.git": true,
+    ".idea": true,
+    ".vscode": true,
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    "node_modules/": true,
+    "templates_module/": true,
+    "**/.project": true,
+    ".mypy_cache/": true,
+    "**/.coverage": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  // "workbench.colorTheme": "Catppuccin Mocha",
+  // "workbench.editor.limit.enabled": true,
+  // "workbench.editor.limit.perEditorGroup": true,
+  // "workbench.editor.limit.value": 1,
+  "workbench.editor.showTabs": false,
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.layoutControl.enabled": false,
+  "workbench.layoutControl.type": "menu",
+  "workbench.statusBar.visible": true,
+  "editor.lineNumbers": "relative",
+  "editor.bracketPairColorization.enabled": true,
+
+  // Vim Settings
+  "vim.leader": "<space>",
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.useSystemClipboard": false,
+  "vim.useCtrlKeys": true,
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["leader", "f", "s"],
+      "commands": ["workbench.action.files.save"]
+    },
+    {
+      "before": ["leader", "."],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["leader", "s", "p"],
+      // find in files
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["leader", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["leader", "w", "d"],
+      "commands": ["workbench.action.closeActiveEditor"]
+    },
+    {
+      "before": ["leader", "w", "v"],
+      "commands": ["workbench.action.splitEditor"]
+    },
+    {
+      "before": ["leader", "w", "s"],
+      "commands": ["workbench.action.splitEditorDown"]
+    },
+    {
+      "before": ["leader", "w", "l"],
+      "commands": ["workbench.action.navigateRight"],
+      "when": ["explorerViewletVisible && filesExplorerFocus && !inputFocus"]
+    },
+    {
+      "before": ["leader", "w", "h"],
+      "commands": ["workbench.action.navigateLeft"],
+      "when": ["explorerViewletVisible && filesExplorerFocus && !inputFocus"]
+    },
+    {
+      "before": ["leader", "w", "k"],
+      "commands": ["workbench.action.navigateUp"],
+      "when": ["explorerViewletVisible && filesExplorerFocus && !inputFocus"]
+    },
+    {
+      "before": ["leader", "w", "j"],
+      "commands": ["workbench.action.navigateDown"],
+      "when": ["explorerViewletVisible && filesExplorerFocus && !inputFocus"]
+    },
+    {
+      "before": ["leader", "`"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["leader", "s", "i"],
+      "commands": ["workbench.action.gotoSymbol"]
+    },
+    {
+      "key": ["leader", "o"],
+      "commands": ["revealInExplorer"],
+      "when": ["editorTextFocus && !sideBarFocus"]
+    }
+  ],
+  "editor.inlineSuggest.enabled": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": ["p"],
+      "commands": ["editor.action.clipboardPasteAction"]
+    },
+    {
+      "before": [">"],
+      "commands": ["editor.action.indentLines"]
+    },
+    {
+      "before": ["<"],
+      "commands": ["editor.action.outdentLines"]
+    }
+  ],
+  "settings.cycle": [
+    {
+      "id": "copilot",
+      "overrideWorkspaceSettings": true,
+      "values": [
+        {
+          "github.copilot.inlineSuggest.enable": false
+        },
+        {
+          "github.copilot.inlineSuggest.enable": true
+        }
+      ]
+    }
+  ],
+  "github.copilot.inlineSuggest.enable": true,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
