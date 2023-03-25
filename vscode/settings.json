@@ -3,17 +3,32 @@
   "breadcrumbs.enabled": false,
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
   "editor.minimap.enabled": false,
   "editor.mouseWheelZoom": true,
   "editor.renderControlCharacters": true,
-  "editor.renderLineHighlight": "line",
   "editor.renderWhitespace": "trailing",
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.horizontalScrollbarSize": 2,
   "editor.scrollbar.vertical": "hidden",
   "editor.scrollbar.verticalScrollbarSize": 2,
   "editor.tabSize": 2,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-_",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?",
+  "editor.glyphMargin": false,
+  "editor.wordBasedSuggestions": false,
+  "editor.cursorBlinking": "solid",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": false
+  },
+  "editor.renderLineHighlight": "none",
+  "diffEditor.renderSideBySide": false,
+  // "editor.tokenColorCustomizations": {
+  //   //"variables": "#a6a28c",
+  //   "comments": "#1d5d27"
+  // },
   // "explorer.openEditors.visible": 0,
   // "files.autoSave": "onWindowChange",
   "files.exclude": {
@@ -34,20 +49,26 @@
   // "workbench.editor.limit.enabled": true,
   // "workbench.editor.limit.perEditorGroup": true,
   // "workbench.editor.limit.value": 1,
-  "workbench.editor.showTabs": false,
+  "workbench.editor.showTabs": true,
   "workbench.iconTheme": "vscode-icons",
   "workbench.layoutControl.enabled": false,
   "workbench.layoutControl.type": "menu",
   "workbench.statusBar.visible": true,
-  "editor.lineNumbers": "relative",
+  "editor.lineNumbers": "off",
   "editor.bracketPairColorization.enabled": true,
 
   // Vim Settings
   "vim.leader": "<space>",
+  "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.hlsearch": true,
   "vim.useSystemClipboard": false,
   "vim.useCtrlKeys": true,
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
 
   "vim.normalModeKeyBindingsNonRecursive": [
     {
@@ -100,6 +121,10 @@
       "when": ["explorerViewletVisible && filesExplorerFocus && !inputFocus"]
     },
     {
+      "before": ["leader", "l", "c"],
+      "command": "typescript.restartTsServer"
+    },
+    {
       "before": ["leader", "`"],
       "commands": ["workbench.action.previousEditor"]
     },
@@ -109,8 +134,22 @@
     },
     {
       "key": ["leader", "o"],
-      "commands": ["revealInExplorer"],
+      "commands": ["workbench.action.revealInExplorer"],
       "when": ["editorTextFocus && !sideBarFocus"]
+    },
+    {
+      "key": "gd",
+      "command": "editor.action.revealDefinition",
+      "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+      "key": "ctrl+i",
+      "command": "editor.action.goToImplementation",
+      "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+    },
+    {
+      "key": ["leader", "b", "b"],
+      "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
     }
   ],
   "editor.inlineSuggest.enabled": true,
@@ -147,6 +186,30 @@
     "editor.formatOnType": true
   },
   "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "cSpell.userWords": [
+    "Catppuccin",
+    "coqui",
+    "coquimono",
+    "easymotion",
+    "esbenp",
+    "hlsearch",
+    "homefinder",
+    "incsearch",
+    "macmaker",
+    "mypy",
+    "outdent",
+    "pycache",
+    "rana",
+    "ranamono",
+    "rgba",
+    "TRPC"
+  ],
+  "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   }
 }
