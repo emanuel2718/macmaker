@@ -226,6 +226,5 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "errorLens.enabledDiagnosticLevels": ["warning", "info"],
-  "console-ninja.autoClearLogViewerOnFileChanges": false,
-  "console-ninja.outputMode": "In View"
+  "console-ninja.autoClearLogViewerOnFileChanges": false
 }

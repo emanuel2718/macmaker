@@ -178,5 +178,10 @@
     "key": "ctrl+k",
     "command": "-deleteAllRight",
     "when": "textInputFocus && !editorReadonly"
+  },
+  {
+    "key": "shift+cmd+m",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorFocus"
   }
 ]
