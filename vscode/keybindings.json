@@ -183,5 +183,9 @@
     "key": "shift+cmd+m",
     "command": "editor.action.insertCursorBelow",
     "when": "editorFocus"
+  },
+  {
+    "key": "ctrl+enter",
+    "command": "workbench.action.closeOtherEditors"
   }
 ]
