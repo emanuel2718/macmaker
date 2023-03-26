@@ -1,5 +1,4 @@
 {
-  // UI Settings
   "breadcrumbs.enabled": false,
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
@@ -25,12 +24,6 @@
   },
   "editor.renderLineHighlight": "none",
   "diffEditor.renderSideBySide": false,
-  // "editor.tokenColorCustomizations": {
-  //   //"variables": "#a6a28c",
-  //   "comments": "#1d5d27"
-  // },
-  // "explorer.openEditors.visible": 0,
-  // "files.autoSave": "onWindowChange",
   "files.exclude": {
     "**/.git": true,
     ".idea": true,
@@ -45,10 +38,6 @@
   },
   "files.trimTrailingWhitespace": true,
   "files.trimFinalNewlines": true,
-  // "workbench.colorTheme": "Catppuccin Mocha",
-  // "workbench.editor.limit.enabled": true,
-  // "workbench.editor.limit.perEditorGroup": true,
-  // "workbench.editor.limit.value": 1,
   "workbench.editor.showTabs": true,
   "workbench.iconTheme": "vscode-icons",
   "workbench.layoutControl.enabled": false,
@@ -57,7 +46,6 @@
   "editor.lineNumbers": "off",
   "editor.bracketPairColorization.enabled": true,
 
-  // Vim Settings
   "vim.leader": "<space>",
   "vim.easymotion": true,
   "vim.incsearch": true,
@@ -129,11 +117,15 @@
       "commands": ["workbench.action.previousEditor"]
     },
     {
+      "before": ["leader", "leader"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
       "before": ["leader", "s", "i"],
       "commands": ["workbench.action.gotoSymbol"]
     },
     {
-      "key": ["leader", "o"],
+      "before": ["leader", "o"],
       "commands": ["workbench.action.revealInExplorer"],
       "when": ["editorTextFocus && !sideBarFocus"]
     },
@@ -143,13 +135,15 @@
       "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-      "key": "ctrl+i",
-      "command": "editor.action.goToImplementation",
-      "when": "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+      "before": ["ctrl+i"],
+      "commands": ["editor.action.goToImplementation"],
+      "when": [
+        "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+      ]
     },
     {
-      "key": ["leader", "b", "b"],
-      "command": "workbench.action.showAllEditorsByMostRecentlyUsed"
+      "before": ["leader", "b", "b"],
+      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
     }
   ],
   "editor.inlineSuggest.enabled": true,
@@ -179,9 +173,21 @@
           "github.copilot.inlineSuggest.enable": true
         }
       ]
+    },
+    {
+      "id": "errorLens",
+      "overrideWorkspaceSettings": true,
+      "values": [
+        {
+          "ErrorLens.enable": true
+        },
+        {
+          "ErrorLens.disable": true
+        }
+      ]
     }
   ],
-  "github.copilot.inlineSuggest.enable": true,
+  "github.copilot.inlineSuggest.enable": false,
   "[python]": {
     "editor.formatOnType": true
   },
@@ -192,6 +198,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.userWords": [
+    "Authed",
     "Catppuccin",
     "coqui",
     "coquimono",
@@ -202,14 +209,23 @@
     "incsearch",
     "macmaker",
     "mypy",
+    "nextjs",
     "outdent",
     "pycache",
     "rana",
     "ranamono",
+    "Ratelimit",
+    "ratelimiter",
     "rgba",
-    "TRPC"
+    "superjson",
+    "TRPC",
+    "typesafety",
+    "upstash"
   ],
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "errorLens.enabledDiagnosticLevels": ["warning", "info"],
+  "console-ninja.autoClearLogViewerOnFileChanges": false,
+  "console-ninja.outputMode": "In View"
 }
