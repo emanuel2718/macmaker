@@ -187,5 +187,9 @@
   {
     "key": "ctrl+enter",
     "command": "workbench.action.closeOtherEditors"
+  },
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.toggleActivityBarVisibility"
   }
 ]

@@ -1,5 +1,6 @@
 {
   "breadcrumbs.enabled": false,
+  "workbench.editor.showTabs": false,
   "editor.fontSize": 14,
   "editor.formatOnSave": true,
   "editor.hideCursorInOverviewRuler": true,
@@ -38,7 +39,6 @@
   },
   "files.trimTrailingWhitespace": true,
   "files.trimFinalNewlines": true,
-  "workbench.editor.showTabs": true,
   "workbench.iconTheme": "vscode-icons",
   "workbench.layoutControl.enabled": false,
   "workbench.layoutControl.type": "menu",
@@ -187,7 +187,7 @@
       ]
     }
   ],
-  "github.copilot.inlineSuggest.enable": false,
+  "github.copilot.inlineSuggest.enable": true,
   "[python]": {
     "editor.formatOnType": true
   },
@@ -198,33 +198,72 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "cSpell.userWords": [
+    "aframe",
+    "argparser",
     "Authed",
+    "AVAILABLED",
+    "Baños",
+    "blacknound",
     "Catppuccin",
+    "clasificados",
+    "cloudfare",
+    "cooldown",
     "coqui",
     "coquimono",
+    "defaultnew",
     "easymotion",
     "esbenp",
+    "gigachad",
     "hlsearch",
     "homefinder",
+    "hrefs",
     "incsearch",
+    "lxml",
     "macmaker",
+    "mantine",
+    "mooon",
     "mypy",
     "nextjs",
+    "nodekeys",
+    "Nound",
+    "ONNX",
     "outdent",
+    "Pepito",
+    "precission",
     "pycache",
+    "radisk",
     "rana",
     "ranamono",
+    "Ranita",
     "Ratelimit",
     "ratelimiter",
     "rgba",
+    "rindexed",
+    "sqft",
     "superjson",
+    "tabler",
+    "Tahoma",
+    "Tensorflowjs",
+    "testid",
     "TRPC",
     "typesafety",
-    "upstash"
+    "upstash",
+    "VRAM",
+    "webgpu",
+    "webrtc"
   ],
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "errorLens.enabledDiagnosticLevels": ["warning", "info"],
-  "console-ninja.autoClearLogViewerOnFileChanges": false
+  "workbench.colorTheme": "Naysayer88",
+  "eslint.packageManager": "pnpm",
+  "errorLens.messageBackgroundMode": "none",
+  "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "#00000000",
+    "editorWarning.foreground": "#00000000",
+    "editorInfo.foreground": "#00000000"
+  },
+  "workbench.activityBar.visible": false
 }
