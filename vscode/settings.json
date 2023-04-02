@@ -1,7 +1,9 @@
 {
   "breadcrumbs.enabled": false,
   "workbench.editor.showTabs": false,
+  "explorer.compactFolders": false,
   "editor.fontSize": 14,
+  "editor.guides.indentation": false,
   "editor.formatOnSave": true,
   "editor.hideCursorInOverviewRuler": true,
   "editor.overviewRulerBorder": false,
@@ -187,7 +189,7 @@
       ]
     }
   ],
-  "github.copilot.inlineSuggest.enable": true,
+  "github.copilot.inlineSuggest.enable": false,
   "[python]": {
     "editor.formatOnType": true
   },
@@ -239,12 +241,15 @@
     "ratelimiter",
     "rgba",
     "rindexed",
+    "Skybnb",
     "sqft",
     "superjson",
     "tabler",
     "Tahoma",
+    "tailwindcss",
     "Tensorflowjs",
     "testid",
+    "TODOLIST",
     "TRPC",
     "typesafety",
     "upstash",
@@ -255,15 +260,14 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "errorLens.enabledDiagnosticLevels": ["warning", "info"],
-  "workbench.colorTheme": "Naysayer88",
+  "errorLens.enabledDiagnosticLevels": ["warning", "error"],
   "eslint.packageManager": "pnpm",
   "errorLens.messageBackgroundMode": "none",
-  "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }],
-  "workbench.colorCustomizations": {
-    "editorError.foreground": "#00000000",
-    "editorWarning.foreground": "#00000000",
-    "editorInfo.foreground": "#00000000"
-  },
-  "workbench.activityBar.visible": false
+  "errorLens.followCursor": "activeLine",
+  "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }]
+  // "workbench.colorCustomizations": {
+  //   "editorError.foreground": "#00000000",
+  //   "editorWarning.foreground": "#00000000",
+  //   "editorInfo.foreground": "#00000000"
+  // }
 }
