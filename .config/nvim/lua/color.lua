@@ -1,9 +1,11 @@
 -- vim.cmd [[colorscheme dawnfox]]
 -- vim.cmd [[colorscheme zenbones]]
 
+-- vim.cmd [[colorscheme habamax]]
 -- vim.cmd [[colorscheme Papercolor]]
 -- vim.cmd [[colorscheme tokyonight-night]]
--- vim.cmd [[colorscheme catppuccin-mocha]]
+vim.cmd [[colorscheme mellifluous]]
+-- vim.cmd [[colorscheme github_dark]]
 
 
 
@@ -33,7 +35,6 @@
 -- vim.cmd [[colorscheme tundra]]
 
 -- vim.cmd [[colorscheme vscode]]
-vim.cmd [[colorscheme github_dark]]
 
 
 -- require 'mellifluous'.setup({}) -- optional, see configuration section.

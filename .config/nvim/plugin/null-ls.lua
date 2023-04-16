@@ -19,16 +19,6 @@ null_ls.setup({
         "prisma",
       },
     }),
-    null_ls.builtins.diagnostics.flake8.with({
-      filetypes = { "python" },
-    }),
-    null_ls.builtins.formatting.autoflake.with({
-      filetypes = { "python" },
-    }),
-    null_ls.builtins.formatting.isort.with({
-      filetypes = { "python" },
-    }),
-
     -- null_ls.builtins.diagnostics.eslint_d.with({
     --   diagnostics_format = "[eslint] #{m}\n(#{c})",
     -- }),
