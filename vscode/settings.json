@@ -1,34 +1,29 @@
 {
+  // System settings
   "breadcrumbs.enabled": false,
-  "workbench.editor.showTabs": false,
   "explorer.compactFolders": false,
-  "editor.fontSize": 14,
   "editor.guides.indentation": false,
   "editor.formatOnSave": true,
-  "editor.hideCursorInOverviewRuler": true,
-  "editor.overviewRulerBorder": false,
   "editor.minimap.enabled": false,
   "editor.mouseWheelZoom": true,
-  "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "trailing",
   "editor.scrollbar.horizontal": "hidden",
-  "editor.scrollbar.horizontalScrollbarSize": 2,
   "editor.scrollbar.vertical": "hidden",
-  "editor.scrollbar.verticalScrollbarSize": 2,
+  "editor.scrollbar.horizontalScrollbarSize": 0,
+  "editor.scrollbar.verticalScrollbarSize": 0,
   "editor.tabSize": 2,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?",
-  "editor.glyphMargin": false,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?_-",
   "editor.wordBasedSuggestions": false,
-  "editor.cursorBlinking": "solid",
   "editor.quickSuggestions": {
-    "other": true,
-    "comments": false,
-    "strings": false
+    "other": "on",
+    "comments": "off",
+    "strings": "off"
   },
-  "editor.renderLineHighlight": "none",
-  "diffEditor.renderSideBySide": false,
+  "editor.lineNumbers": "relative",
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
   "files.exclude": {
-    "**/.git": true,
     ".idea": true,
     ".vscode": true,
     "**/__pycache__": true,
@@ -37,99 +32,86 @@
     "templates_module/": true,
     "**/.project": true,
     ".mypy_cache/": true,
-    "**/.coverage": true
+    //     "**/.classpath": true,
+    //     "**/.coverage": true,
+    //     "**/.factorypath": true,
+    //     "**/.settings": true,
   },
-  "files.trimTrailingWhitespace": true,
-  "files.trimFinalNewlines": true,
-  "workbench.iconTheme": "vscode-icons",
-  "workbench.layoutControl.enabled": false,
-  "workbench.layoutControl.type": "menu",
-  "workbench.statusBar.visible": true,
-  "editor.lineNumbers": "off",
-  "editor.bracketPairColorization.enabled": true,
-
-  "vim.leader": "<space>",
-  "vim.easymotion": true,
-  "vim.incsearch": true,
-  "vim.hlsearch": true,
+  // VIM Settings
+  "vim.leader": "space",
   "vim.useSystemClipboard": false,
   "vim.useCtrlKeys": true,
+  "editor.bracketPairColorization.enabled": true,
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
   },
-  "vim.searchHighlightColor": "rgba(150, 255, 255, 0.3)",
-
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["leader", "f", "s"],
-      "commands": ["workbench.action.files.save"]
+      "before": [
+        "leader",
+        "f",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ]
     },
     {
-      "before": ["leader", "."],
-      "commands": ["workbench.action.quickOpen"]
+      "before": [
+        "leader",
+        "."
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
     },
     {
-      "before": ["leader", "s", "p"],
-      // find in files
-      "commands": ["workbench.action.findInFiles"]
+      "before": [
+        "leader",
+        "s",
+        "p"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ]
     },
     {
-      "before": ["leader", "e"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
+      "before": [
+        "leader",
+        "o"
+      ],
+      "commands": [
+        "workbench.action.closeAllEditors"
+      ]
     },
     {
-      "before": ["leader", "w", "d"],
-      "commands": ["workbench.action.closeActiveEditor"]
+      "before": [
+        "leader",
+        "m"
+      ],
+      "commands": [
+        "workbench.action.splitEditor"
+      ]
     },
     {
-      "before": ["leader", "w", "v"],
-      "commands": ["workbench.action.splitEditor"]
+      "before": [
+        "leader",
+        "n"
+      ],
+      "commands": [
+        "workbench.action.splitEditorDown"
+      ]
     },
     {
-      "before": ["leader", "w", "s"],
-      "commands": ["workbench.action.splitEditorDown"]
-    },
-    {
-      "before": ["leader", "w", "l"],
-      "commands": ["workbench.action.navigateRight"],
-      "when": ["explorerViewletVisible && filesExplorerFocus && !inputFocus"]
-    },
-    {
-      "before": ["leader", "w", "h"],
-      "commands": ["workbench.action.navigateLeft"],
-      "when": ["explorerViewletVisible && filesExplorerFocus && !inputFocus"]
-    },
-    {
-      "before": ["leader", "w", "k"],
-      "commands": ["workbench.action.navigateUp"],
-      "when": ["explorerViewletVisible && filesExplorerFocus && !inputFocus"]
-    },
-    {
-      "before": ["leader", "w", "j"],
-      "commands": ["workbench.action.navigateDown"],
-      "when": ["explorerViewletVisible && filesExplorerFocus && !inputFocus"]
-    },
-    {
-      "before": ["leader", "l", "c"],
-      "command": "typescript.restartTsServer"
-    },
-    {
-      "before": ["leader", "`"],
-      "commands": ["workbench.action.previousEditor"]
-    },
-    {
-      "before": ["leader", "leader"],
-      "commands": ["workbench.action.nextEditor"]
-    },
-    {
-      "before": ["leader", "s", "i"],
-      "commands": ["workbench.action.gotoSymbol"]
-    },
-    {
-      "before": ["leader", "o"],
-      "commands": ["workbench.action.revealInExplorer"],
-      "when": ["editorTextFocus && !sideBarFocus"]
+      "before": [
+        "leader",
+        "s",
+        "i"
+      ],
+      "commands": [
+        "workbench.action.gotoSymbol"
+      ]
     },
     {
       "key": "gd",
@@ -137,137 +119,103 @@
       "when": "editorHasDefinitionProvider && editorTextFocus && !isInEmbeddedEditor"
     },
     {
-      "before": ["ctrl+i"],
-      "commands": ["editor.action.goToImplementation"],
-      "when": [
-        "editorHasImplementationProvider && editorTextFocus && !isInEmbeddedEditor"
+      "before": [
+        "leader",
+        "b",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.showAllEditorsByMostRecentlyUsed"
       ]
     },
     {
-      "before": ["leader", "b", "b"],
-      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
-    }
+      "before": [
+        "leader",
+        "r",
+        "n"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ]
+    },
+    {
+      "before": [
+        ";"
+      ],
+      "commands": [
+        "workbench.action.showCommands",
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "p"
+      ],
+      "commands": [
+        "workbench.action.showCommands",
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "s",
+        "s"
+      ],
+      "commands": [
+        "workbench.actions.view.problems"
+      ]
+    },
   ],
-  "editor.inlineSuggest.enabled": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     {
-      "before": ["p"],
-      "commands": ["editor.action.clipboardPasteAction"]
-    },
-    {
-      "before": [">"],
-      "commands": ["editor.action.indentLines"]
-    },
-    {
-      "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
-    }
-  ],
-  "settings.cycle": [
-    {
-      "id": "copilot",
-      "overrideWorkspaceSettings": true,
-      "values": [
-        {
-          "github.copilot.inlineSuggest.enable": false
-        },
-        {
-          "github.copilot.inlineSuggest.enable": true
-        }
+      "before": [
+        "p"
+      ],
+      "commands": [
+        "editor.action.clipboardPasteAction"
       ]
     },
     {
-      "id": "errorLens",
-      "overrideWorkspaceSettings": true,
-      "values": [
-        {
-          "ErrorLens.enable": true
-        },
-        {
-          "ErrorLens.disable": true
-        }
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
       ]
     }
   ],
-  "github.copilot.inlineSuggest.enable": false,
-  "[python]": {
-    "editor.formatOnType": true
-  },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "explorer.confirmDelete": false,
+  "window.zoomLevel": 2,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.userWords": [
-    "aframe",
-    "argparser",
-    "Authed",
-    "AVAILABLED",
-    "Baños",
-    "blacknound",
-    "Catppuccin",
-    "clasificados",
-    "cloudfare",
-    "cooldown",
-    "coqui",
-    "coquimono",
-    "defaultnew",
-    "easymotion",
-    "esbenp",
-    "gigachad",
-    "hlsearch",
-    "homefinder",
-    "hrefs",
-    "incsearch",
-    "lxml",
-    "macmaker",
-    "mantine",
-    "mooon",
-    "mypy",
-    "nextjs",
-    "nodekeys",
-    "Nound",
-    "ONNX",
-    "outdent",
-    "Pepito",
-    "precission",
-    "pycache",
-    "radisk",
-    "rana",
-    "ranamono",
-    "Ranita",
-    "Ratelimit",
-    "ratelimiter",
-    "rgba",
-    "rindexed",
-    "Skybnb",
-    "sqft",
-    "superjson",
-    "tabler",
-    "Tahoma",
-    "tailwindcss",
-    "Tensorflowjs",
-    "testid",
-    "TODOLIST",
-    "TRPC",
-    "typesafety",
-    "upstash",
-    "VRAM",
-    "webgpu",
-    "webrtc"
+  // Extensions: Python
+  "python.linting.flake8Args": [
+    "--max-line-length=120",
+    "--max-complexity=12"
   ],
+  "python.linting.mypyEnabled": true,
+  "python.formatting.provider": "black",
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
-  "errorLens.enabledDiagnosticLevels": ["warning", "error"],
-  "eslint.packageManager": "pnpm",
-  "errorLens.messageBackgroundMode": "none",
-  "errorLens.followCursor": "activeLine",
-  "eslint.rules.customizations": [{ "rule": "*", "severity": "warn" }]
-  // "workbench.colorCustomizations": {
-  //   "editorError.foreground": "#00000000",
-  //   "editorWarning.foreground": "#00000000",
-  //   "editorInfo.foreground": "#00000000"
-  // }
+  // Extensions: ErrorLens
+  "errorLens.statusBarColorsEnabled": true,
+  "errorLens.margin": "6ch",
+  "errorLens.fontWeight": "100",
+  "errorLens.fontStyleItalic": true,
+  "errorLens.fontSize": "13",
+  "errorLens.followCursor": "closestProblem",
+  "errorLens.gutterIconsEnabled": true,
 }
