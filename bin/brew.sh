@@ -15,6 +15,7 @@ brew install ack
 brew install autoconf
 brew install automake
 brew install awscli
+brew install bat
 brew install bottom
 brew install cmake
 brew install curl
@@ -27,6 +28,8 @@ brew install freetype
 brew install fzf
 brew install gettext
 brew install git
+brew install gitui
+brew install git-delta
 brew install git-lfs
 brew install gnu-sed --with-default-name
 brew install gnutls
