@@ -1,6 +1,11 @@
 // Place your key bindings in this file to override the defaults
 [
   {
+    "key": "ctrl+p",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "editorTextFocus"
+  },
+  {
     "key": "cmd+p",
     "command": "workbench.action.quickOpenNavigateNextInFilePicker",
     "when": "inFilesPicker && inQuickOpen"

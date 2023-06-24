@@ -1,6 +1,12 @@
 {
   // System settings
-  "breadcrumbs.enabled": false,
+  "window.zoomLevel": 0,
+  "editor.fontSize": 14,
+  "terminal.integrated.fontSize": 16,
+  "workbench.sideBar.location": "right",
+  "search.quickOpen.includeHistory": false,
+  "workbench.editor.showTabs": false,
+  "breadcrumbs.enabled": true,
   "explorer.compactFolders": false,
   "editor.guides.indentation": false,
   "editor.formatOnSave": true,
@@ -37,6 +43,10 @@
     //     "**/.factorypath": true,
     //     "**/.settings": true,
   },
+  "eslint.alwaysShowStatus": true,
+  "editor.accessibilitySupport": "off",
+  "prettier.requireConfig": true,
+  "rust-analyzer.inlayHints.enable": false,
   // VIM Settings
   "vim.leader": "space",
   "vim.useSystemClipboard": false,
@@ -131,12 +141,21 @@
     {
       "before": [
         "leader",
-        "r",
-        "n"
+        "l",
+        "r"
       ],
       "commands": [
         "editor.action.rename"
       ]
+    },
+    {
+      "before": [
+        "leader",
+        "i"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ],
     },
     {
       "before": [
@@ -196,7 +215,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "explorer.confirmDelete": false,
-  "window.zoomLevel": 2,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -218,4 +236,10 @@
   "errorLens.fontSize": "13",
   "errorLens.followCursor": "closestProblem",
   "errorLens.gutterIconsEnabled": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "workbench.colorTheme": "Nord",
+  "workbench.layoutControl.enabled": false,
+  "editor.inlineSuggest.enabled": true,
 }
