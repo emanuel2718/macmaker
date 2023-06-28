@@ -1,6 +1,6 @@
 if [ "$(command -v brew)" ]; then
     echo "Homebrew already installed on the system"
-fi 
+fi
 
 echo "> Updating brew"
 brew update
@@ -8,7 +8,7 @@ echo "> Upgrading brew"
 brew upgrade
 
 # save homebrew installed location
-BREW_PREFIX=$(brew --prefix) 
+BREW_PREFIX=$(brew --prefix)
 
 echo "> Installing brew packages"
 brew install ack
@@ -60,8 +60,8 @@ brew install wget
 brew install z
 brew install zoxide
 brew tap clementtsang/bottom
-brew install --cask 1password
 brew install --cask alacritty
+brew install --cask 1password
 brew install --cask appcleaner
 brew install --cask brave-browser
 brew install --cask discord
@@ -75,6 +75,7 @@ brew install --cask karabiner-elements
 brew install --cask obsidian
 brew install --cask postman
 brew install --cask raycast
+brew install --cask shottr
 brew install --cask via
 brew install --cask visual-studio-code
 brew tap homebrew/cask-versions
