@@ -43,6 +43,20 @@
     //     "**/.factorypath": true,
     //     "**/.settings": true,
   },
+  "settings.cycle": [
+    {
+      "id": "copilot",
+      "overrideWorkspaceSettings": true,
+      "values": [
+        {
+          "github.copilot.inlineSuggest.enable": false
+        },
+        {
+          "github.copilot.inlineSuggest.enable": true
+        }
+      ]
+    },
+  ],
   "eslint.alwaysShowStatus": true,
   "editor.accessibilitySupport": "off",
   "prettier.requireConfig": true,
@@ -51,7 +65,7 @@
   "vim.leader": "space",
   "vim.useSystemClipboard": false,
   "vim.useCtrlKeys": true,
-  "editor.bracketPairColorization.enabled": true,
+  "editor.bracketPairColorization.enabled": false,
   "vim.handleKeys": {
     "<C-a>": false,
     "<C-f>": false
@@ -102,6 +116,15 @@
       ],
       "commands": [
         "workbench.action.splitEditor"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        ";"
+      ],
+      "commands": [
+        "settings.cycle.copilot"
       ]
     },
     {
@@ -239,7 +262,11 @@
   "[python]": {
     "editor.defaultFormatter": "ms-python.black-formatter"
   },
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Monochrome Dark Subtle",
   "workbench.layoutControl.enabled": false,
   "editor.inlineSuggest.enabled": true,
+  "cSpell.userWords": [
+    "clustername"
+  ],
+  "github.copilot.inlineSuggest.enable": false,
 }

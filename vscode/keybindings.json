@@ -127,7 +127,7 @@
     "when": "editorFocus || editorIsOpen"
   },
   {
-    "key": "ctrl+.",
+    "key": "ctrl+t",
     "command": "workbench.action.terminal.toggleTerminal"
   },
   {
@@ -159,5 +159,15 @@
     "key": "ctrl+n",
     "command": "-showNextParameterHint",
     "when": "editorFocus && parameterHintsMultipleSignatures && parameterHintsVisible"
+  },
+  {
+    "key": "cmd+;",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "editorFocus"
   }
+  // {
+  //   "key": "cmd+;",
+  //   "command": "settings.cycle.copilot",
+  //   "when": "editorFocus"
+  // },
 ]
