@@ -37,16 +37,17 @@
   },
 
   "files.exclude": {
-    "**/node_modules/": true,
+    "**/*.bs.js": true,
+    "**/.DS_Store": true,
     "**/.git": true,
     "**/.next": true,
-    "**/.DS_Store": true,
+    "**/__pycache__/**": true,
+    "**/node_modules/": true,
+    "**/npm-debug.log": true,
     "**/package-lock.json": true,
     "**/yarn.lock": true,
+    ".mypy_cache/**": true,
     "vendor": true,
-    "**/npm-debug.log": true,
-    "**/dist": true,
-    "**/*.bs.js": true
   },
 
   "workbench.panel.defaultLocation": "right",
