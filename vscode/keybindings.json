@@ -1,5 +1,4 @@
 [
-
   {
     "key": "cmd+o",
     "command": "projectManager.listGitProjects#sideBarGit"
@@ -57,7 +56,7 @@
   },
   {
     "key": "cmd+c",
-    "command": "editor.action.copyLinesUpAction"
+    "command": "editor.action.clipboardCopyAction"
   },
   {
     "key": "cmd+v",

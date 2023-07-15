@@ -6,7 +6,7 @@
   "editor.fontSize": 15,
   "editor.fontLigatures": false,
   "editor.minimap.enabled": false,
-  "editor.suggest.insertMode": "replace",
+  // "editor.suggest.insertMode": "replace",
   "editor.formatOnSave": true,
   "editor.stickyScroll.enabled": true,
   "editor.suggestSelection": "first",
@@ -32,10 +32,9 @@
     "comments": "off",
     "strings": "off"
   },
-  "editor.codeActionsOnSave": {
-    "source.organizeImports": true
-  },
-
+  // "editor.codeActionsOnSave": {
+  //   "source.organizeImports": true
+  // },
   "files.exclude": {
     "**/*.bs.js": true,
     "**/.DS_Store": true,
@@ -47,9 +46,8 @@
     "**/package-lock.json": true,
     "**/yarn.lock": true,
     ".mypy_cache/**": true,
-    "vendor": true,
+    "vendor": true
   },
-
   "workbench.panel.defaultLocation": "right",
   "workbench.sideBar.location": "right",
   "breadcrumbs.filePath": "on",
@@ -76,7 +74,6 @@
   "zenMode.hideLineNumbers": false,
   "workbench.startupEditor": "none",
   "workbench.iconTheme": "material-icon-theme",
-
   "settings.cycle": [
     {
       "id": "copilot",
@@ -89,16 +86,15 @@
           "github.copilot.inlineSuggest.enable": true
         }
       ]
-    },
+    }
   ],
-
-
   "extensions.ignoreRecommendations": true,
   "extensions.autoUpdate": "onlyEnabledExtensions",
   "security.workspace.trust.untrustedFiles": "open",
-  "window.zoomLevel": -1,
   "projectManager.git.baseFolders": [
-    "$HOME/git/projects"
+    "$HOME/developer/personal",
+    "$HOME/developer/work",
+    "$HOME/developer/work"
   ],
   "projectManager.sortList": "Recent",
   "workbench.settings.editor": "json",
@@ -113,14 +109,11 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "python.linting.flake8Args": [
-    "--max-line-length=120",
-    "--max-complexity=12"
-  ],
+  "python.linting.flake8Args": ["--max-line-length=120", "--max-complexity=12"],
   "python.linting.mypyEnabled": true,
   "python.formatting.provider": "black",
   "rust-analyzer.inlayHints.enable": false,
-  "github.copilot.inlineSuggest.enable": false,
+  "github.copilot.inlineSuggest.enable": true,
   "errorLens.statusBarColorsEnabled": true,
   "errorLens.margin": "6ch",
   "errorLens.fontWeight": "100",
@@ -128,9 +121,6 @@
   "errorLens.fontSize": "13",
   // "errorLens.followCursor": "closestProblem",
   "errorLens.gutterIconsEnabled": true,
-
-
-
   // VIM Settings
   "vim.leader": "<space>",
   "vim.useSystemClipboard": false,
@@ -195,7 +185,6 @@
     {
       "before": ["R"],
       "commands": ["editor.action.rename"]
-
     },
     {
       "before": ["[", "d"],
@@ -206,12 +195,12 @@
       "commands": ["editor.action.marked.next"]
     },
     {
-      "before": ["leader",";"],
+      "before": ["leader", ";"],
       "commands": ["settings.cycle.copilot"]
     },
     {
       "before": ["leader", "s", "i"],
-      "commannds": ["workbench.action.goToSymbol"]
+      "commands": ["workbench.action.showAllSymbols"]
     },
     {
       "key": "gd",
@@ -254,5 +243,19 @@
     }
   ],
   "projectManager.projectsLocation": "$HOME/.config/Code/User/globalStorage/alefragnani.project-manager/projects.json",
-  "workbench.activityBar.visible": false
+  "editor.inlineSuggest.enabled": true,
+  "cSpell.userWords": [
+    "Chakra",
+    "clustername",
+    "foldfix",
+    "GROUPVIEW",
+    "hookform",
+    "LEAVECLUSTER",
+    "linebreak",
+    "Petch",
+    "webrtc",
+    "zustand"
+  ],
+  "window.zoomLevel": -2,
+  "workbench.colorTheme": "Eclipse Classic Light"
 }
