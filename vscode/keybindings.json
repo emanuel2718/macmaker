@@ -45,6 +45,11 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
+    "key": "Tab",
+    "command": "filesExplorer.openFilePreserveFocus",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
     "key": "p",
     "command": "filesExplorer.paste",
     "when": "filesExplorerFocus && !inputFocus"
