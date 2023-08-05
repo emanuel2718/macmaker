@@ -45,6 +45,11 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
+    "key": "Enter",
+    "command": "filesExplorer.openFilePreserveFocus",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
     "key": "Tab",
     "command": "filesExplorer.openFilePreserveFocus",
     "when": "filesExplorerFocus && !inputFocus"
@@ -162,5 +167,10 @@
     "key": "cmd+]",
     "command": "search.action.focusNextSearchResult",
     "when": "hasSearchResult || inSearchEditor"
+  },
+  {
+    "key": "cmd+r",
+    "command": "editor.action.rename",
+    "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
   }
 ]
