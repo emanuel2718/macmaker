@@ -118,11 +118,12 @@ return {
     map.set({ "n", "v" }, "<C-c>", vim.lsp.buf.code_action, opts)
     map.set("n", "<leader>r", vim.lsp.buf.rename, opts)
     map.set("n", "<leader>di", "<cmd>Telescope diagnostics bufnr=0<CR>", opts)
-    map.set("n", "<C-,>", vim.diagnostic.open_float, opts)
+    map.set("n", "<leader>d.", vim.diagnostic.open_float, opts)
     map.set("i", "<C-k>", vim.lsp.buf.signature_help, opts)
+    map.set("n", "<leader>k", vim.lsp.buf.signature_help, opts)
     map.set("n", "K", vim.lsp.buf.hover, opts)
     map.set("n", "<leader>lc", ":LspRestart<CR>", opts)
     -- Symbol picker in <leader>si
-    map.set("n", "<leader>si", "<cmd>Telescope lsp_document_symbols<CR>", opts)
+    -- map.set("n", "<leader>si", "<cmd>Telescope lsp_document_symbols<CR>", opts)
   end
 }

@@ -51,8 +51,9 @@ map("v", ".", "<cmd>norm .<cr>", opts)
 
 ------- PLGUINS -------
 
--- NvimTree
-map("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
+-- Trees
+-- map("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
+map("n", "<C-n>", ":Neotree toggle<CR>", opts)
 
 
 -- Telescope
@@ -64,4 +65,19 @@ map("n", "<leader>b", telescope_builtin.buffers, opts)
 map("n", "<leader>fh", telescope_builtin.help_tags, opts)
 map('n', '<leader>ss', telescope_builtin.current_buffer_fuzzy_find, opts)
 map('n', '<leader>ht', telescope_builtin.colorscheme, opts)
+map('n', '<leader>si', telescope_builtin.lsp_document_symbols, opts)
+map('n', '<leader>sI', telescope_builtin.lsp_workspace_symbols, opts)
 map('n', '<leader>bb', ':Telescope buffers<CR>', opts)
+
+-- Lazy
+map('n', '<leader>L', '<cmd>Lazy<cr>', opts)
+
+-- Mason
+map('n', '<leader>M', '<cmd>Mason<cr>', opts)
+
+-- TSC autocommand keybind to run TypeScripts tsc
+map("n", "<leader>tc", ":TSC<cr>", opts)
+
+
+-- Symbols Outline
+map('n', '<leader>so', '<cmd>SymbolsOutline<cr>', opts)
