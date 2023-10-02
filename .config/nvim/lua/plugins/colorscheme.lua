@@ -138,4 +138,15 @@ return {
       -- vim.cmd.colorscheme("carbonfox")
     end,
   },
+  {
+    'fenetikm/falcon',
+    config = function()
+    end
+  },
+  {
+    'ishan9299/nvim-solarized-lua',
+    config = function()
+      vim.g.solarized_italics = 0
+    end
+  }
 }

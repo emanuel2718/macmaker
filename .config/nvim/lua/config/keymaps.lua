@@ -78,6 +78,9 @@ map('n', '<leader>M', '<cmd>Mason<cr>', opts)
 -- TSC autocommand keybind to run TypeScripts tsc
 map("n", "<leader>tc", ":TSC<cr>", opts)
 
+-- Toggle Diagnostics
+map('n', '<leader>dd', '<cmd>ToggleDiag<cr>', opts)
+
 
 -- Symbols Outline
 map('n', '<leader>so', '<cmd>SymbolsOutline<cr>', opts)

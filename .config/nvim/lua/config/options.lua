@@ -24,7 +24,7 @@ opt.hlsearch = true   -- highlight all matches on previous search pattern
 opt.ignorecase = true -- ignore case in search patterns
 opt.smartcase = true  -- smart case
 
-opt.cursorline = true -- highlight the current line
+-- opt.cursorline = true -- highlight the current line
 opt.laststatus = 2    -- only the last window will always have a status line
 opt.lazyredraw = true -- don"t update the display while executing macros
 opt.list = true
@@ -90,4 +90,10 @@ for _, plugin in pairs(disabled_built_ins) do
 end
 
 
+opt.background = 'light'
+-- vim.cmd.colorscheme('gruvbox-material')
+-- vim.cmd.colorscheme('tokyonight-day')
+-- vim.cmd.colorscheme('solarized')
 vim.cmd.colorscheme("carbonfox")
+-- vim.cmd.colorscheme("modus-vivendi")
+-- vim.cmd.colorscheme("falcon")
