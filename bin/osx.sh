@@ -10,6 +10,11 @@ sudo -v
 # Keep alive
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+
+echo "Show app switcher in all windows"
+# app switcher follows the dock, and it sometimes moved to the second monitor. Annoying.
+defaults write com.apple.dock appswitcher-all-displays -bool true 
+
 echo "Finder: show all filename extensions"
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
